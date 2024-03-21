@@ -1,0 +1,3 @@
+D:/Codefield/DS/HW1/build/CMakeFiles/HW1.dir
+D:/Codefield/DS/HW1/build/CMakeFiles/edit_cache.dir
+D:/Codefield/DS/HW1/build/CMakeFiles/rebuild_cache.dir

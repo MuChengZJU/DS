@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Codefield/DS/HW2/SeqList/SeqList.h
+
+D:/Codefield/DS/HW2/hw2.c
+stdio.h
+D:/Codefield/DS/HW2/stdio.h
+SeqList/SeqList.h
+D:/Codefield/DS/HW2/SeqList/SeqList.h
+

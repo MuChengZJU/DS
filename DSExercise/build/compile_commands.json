@@ -1,0 +1,27 @@
+[
+{
+  "directory": "D:/Codefield/DS/DSExercise/build",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\gcc.exe   -g   -o CMakeFiles\\DSExercise.dir\\DSExercise.c.obj   -c D:\\Codefield\\DS\\DSExercise\\DSExercise.c",
+  "file": "D:/Codefield/DS/DSExercise/DSExercise.c"
+},
+{
+  "directory": "D:/Codefield/DS/DSExercise/build",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\gcc.exe   -g   -o CMakeFiles\\DSExercise.dir\\MathComplex\\MathComplex.c.obj   -c D:\\Codefield\\DS\\DSExercise\\MathComplex\\MathComplex.c",
+  "file": "D:/Codefield/DS/DSExercise/MathComplex/MathComplex.c"
+},
+{
+  "directory": "D:/Codefield/DS/DSExercise/build",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\gcc.exe   -g   -o CMakeFiles\\DSExercise.dir\\MathComplex\\Complex.c.obj   -c D:\\Codefield\\DS\\DSExercise\\MathComplex\\Complex.c",
+  "file": "D:/Codefield/DS/DSExercise/MathComplex/Complex.c"
+},
+{
+  "directory": "D:/Codefield/DS/DSExercise/build/Tests",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\gcc.exe   -g   -Wall -Wextra -pedantic -o CMakeFiles\\DSExerciseTest.dir\\DSExerciseTest.c.obj   -c D:\\Codefield\\DS\\DSExercise\\Tests\\DSExerciseTest.c",
+  "file": "D:/Codefield/DS/DSExercise/Tests/DSExerciseTest.c"
+},
+{
+  "directory": "D:/Codefield/DS/DSExercise/build/Tests",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\gcc.exe   -g   -Wall -Wextra -pedantic -o CMakeFiles\\DSExerciseTest.dir\\__\\MathComplex\\Complex.c.obj   -c D:\\Codefield\\DS\\DSExercise\\MathComplex\\Complex.c",
+  "file": "D:/Codefield/DS/DSExercise/MathComplex/Complex.c"
+}
+]

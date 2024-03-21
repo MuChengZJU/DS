@@ -1,0 +1,21 @@
+Start testing: Mar 13 23:54 ?D1迆㊣那℅?那㊣??
+----------------------------------------------------------
+38/38 Testing: complex_AddComplex_009
+38/38 Test: complex_AddComplex_009
+Command: "D:/Codefield/DS/DSExercise/build/Tests/DSExerciseTest.exe" "complex" "AddComplex" "-0.4" "-0.6" "-0.8" "-1.7"
+Directory: D:/Codefield/DS/DSExercise/build/Tests
+"complex_AddComplex_009" start time: Mar 13 23:54 ?D1迆㊣那℅?那㊣??
+Output:
+----------------------------------------------------------
+-1.20 - 2.30i
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found. Regex=[^-1[.]20 - 2[.]30i[
+]]
+"complex_AddComplex_009" end time: Mar 13 23:54 ?D1迆㊣那℅?那㊣??
+"complex_AddComplex_009" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 13 23:54 ?D1迆㊣那℅?那㊣??

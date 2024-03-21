@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Win32-mingw32-make"
+	BuildStamp="20240313-1510-Experimental"
+	Name="MAXTX4"
+	Generator="ctest-3.16.4"
+	CompilerName="C:/Program Files/mingw64/bin/g++.exe"
+	CompilerVersion="8.1.0"
+	OSName="Windows"
+	Hostname="MaxTX4"
+	OSRelease=" Professional"
+	OSVersion=" (Build 22631)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="15"
+	ModelID="4"
+	ProcessorCacheSize="64"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="28897"
+	TotalPhysicalMemory="15585"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="3992"
+	>
+	<Testing>
+		<StartDateTime>Mar 13 23:54 ?D1[NON-UTF-8-BYTE-0xA8][NON-UTF-8-BYTE-0xB2][NON-UTF-8-BYTE-0xA1][NON-UTF-8-BYTE-0xC0][NON-UTF-8-BYTE-0xA8][NON-UTF-8-BYTE-0xBA][NON-UTF-8-BYTE-0xA1][NON-UTF-8-BYTE-0xC1]?[NON-UTF-8-BYTE-0xA8][NON-UTF-8-BYTE-0xBA][NON-UTF-8-BYTE-0xA1][NON-UTF-8-BYTE-0xC0]??</StartDateTime>
+		<StartTestTime>1710345266</StartTestTime>
+		<TestList>
+			<Test>./Tests/complex_AddComplex_009</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>complex_AddComplex_009</Name>
+			<Path>./Tests</Path>
+			<FullName>./Tests/complex_AddComplex_009</FullName>
+			<FullCommandLine>D:\Codefield\DS\DSExercise\build\Tests\DSExerciseTest.exe "complex" "AddComplex" "-0.4" "-0.6" "-0.8" "-1.7"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0105884</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Pass Reason">
+					<Value>Required regular expression found. Regex=[^-1[.]20 - 2[.]30i[
+]]</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>D:\Codefield\DS\DSExercise\build\Tests\DSExerciseTest.exe "complex" "AddComplex" "-0.4" "-0.6" "-0.8" "-1.7"</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>-1.20 - 2.30i
+</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Mar 13 23:54 ?D1[NON-UTF-8-BYTE-0xA8][NON-UTF-8-BYTE-0xB2][NON-UTF-8-BYTE-0xA1][NON-UTF-8-BYTE-0xC0][NON-UTF-8-BYTE-0xA8][NON-UTF-8-BYTE-0xBA][NON-UTF-8-BYTE-0xA1][NON-UTF-8-BYTE-0xC1]?[NON-UTF-8-BYTE-0xA8][NON-UTF-8-BYTE-0xBA][NON-UTF-8-BYTE-0xA1][NON-UTF-8-BYTE-0xC0]??</EndDateTime>
+		<EndTestTime>1710345266</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

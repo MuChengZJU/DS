@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Codefield/DS/DSExercise/DSExercise.c
+stdio.h
+D:/Codefield/DS/DSExercise/stdio.h
+stdlib.h
+D:/Codefield/DS/DSExercise/stdlib.h
+
+D:/Codefield/DS/DSExercise/MathComplex/Complex.c
+stdio.h
+D:/Codefield/DS/DSExercise/MathComplex/stdio.h
+stdlib.h
+D:/Codefield/DS/DSExercise/MathComplex/stdlib.h
+Complex.h
+D:/Codefield/DS/DSExercise/MathComplex/Complex.h
+math.h
+D:/Codefield/DS/DSExercise/MathComplex/math.h
+
+D:/Codefield/DS/DSExercise/MathComplex/Complex.h
+
+D:/Codefield/DS/DSExercise/MathComplex/MathComplex.c
+stdio.h
+D:/Codefield/DS/DSExercise/MathComplex/stdio.h
+stdlib.h
+D:/Codefield/DS/DSExercise/MathComplex/stdlib.h
+Complex.h
+D:/Codefield/DS/DSExercise/MathComplex/Complex.h
+
