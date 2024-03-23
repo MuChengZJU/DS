@@ -86,3 +86,38 @@ int freeLinkedList(pLinkedList head) {
     }
     return 0;
 }
+
+int compareLists(pLinkedList A, pLinkedList B) {
+    pLinkedList A_prime = A->next;
+    pLinkedList B_prime = B->next;
+
+    while (A_prime != NULL && B_prime != NULL) {
+        if (A_prime->data < B_prime->data) {
+            return -1; // A < B
+        } else if (A_prime->data > B_prime->data) {
+            return 1; // A > B
+        }
+
+        A_prime = A_prime->next;
+        B_prime = B_prime->next;
+    }
+
+    if (A_prime == NULL && B_prime == NULL) {
+        return 0; // A = B
+    } else if (A_prime == NULL && B_prime != NULL) {
+        return -1; // A < B
+    } else {
+        return 1; // A > B
+    }
+}
+
+int inputLinkedList(pLinkedList head) {
+    char buffer[100];
+    printf("Please Input the Elements of the LinkedList:\n");
+    fgets(buffer, 100, stdin);
+    int element;
+    while (sscanf(buffer, "%d", &element) != EOF) {
+        insertNode(head, element);
+    }
+    return 0;
+}

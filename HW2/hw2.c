@@ -10,6 +10,8 @@
  */
 
 #include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
 #include "SeqList\SeqList.h"
 #include "LinkedList\LinkedList.h"
 
@@ -160,13 +162,9 @@ int problem_2_11() {
 
 int problem_2_22() {
   pLinkedList pLL_222 = createLinkedList();
-  insertNode(pLL_222, 1);
-  insertNode(pLL_222, 1);
-  insertNode(pLL_222, 4);
-  insertNode(pLL_222, 5);
-  insertNode(pLL_222, 1);
-  insertNode(pLL_222, 4);
 
+  // Insert elements into LinkedList
+  inputLinkedList(pLL_222);
   printf("The Origin LinkedList:\n");
   printLinkedList(pLL_222);
 
@@ -183,5 +181,29 @@ int problem_2_22() {
 }
 
 int problem_2_12() {
+  pLinkedList pLL_212_A = createLinkedList();
+  pLinkedList pLL_212_B = createLinkedList();
+  char buffer[100];
+  printf("LinkedList A:\n");
+  inputLinkedList(pLL_212_A);
+  printf("LinkedList B:\n");
+  inputLinkedList(pLL_212_B);
+  
+  int compareResult = compareLists(pLL_212_A, pLL_212_B);
+  switch (compareResult) {
+    case -1:
+      printf("LinkedList A < LinkedList B\n");
+      break;
+    case 0:
+      printf("LinkedList A = LinkedList B\n");
+      break;
+    case 1:
+      printf("LinkedList A > LinkedList B\n");
+      break;
+    default:
+      printf("Error in compareLists.\n");
+      break;
+  }
+
   return 0;
 }

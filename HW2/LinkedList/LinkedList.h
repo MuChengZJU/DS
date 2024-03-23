@@ -18,4 +18,8 @@ int printLinkedList(pLinkedList head);
 
 int freeLinkedList(pLinkedList head);
 
+int compareLists(pLinkedList A, pLinkedList B);
+
+int inputLinkedList(pLinkedList head);
+
 #endif
