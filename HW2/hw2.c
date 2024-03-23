@@ -205,5 +205,8 @@ int problem_2_12() {
       break;
   }
 
+  freeLinkedList(pLL_212_A);
+  freeLinkedList(pLL_212_B);
+
   return 0;
 }
