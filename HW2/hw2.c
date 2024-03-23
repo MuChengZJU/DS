@@ -11,10 +11,13 @@
 
 #include "stdio.h"
 #include "SeqList\SeqList.h"
+#include "LinkedList\LinkedList.h"
 
 int problem_2_11(void);
 
 int problem_2_12(void);
+
+int problem_2_22(void);
 
 /**
  * @brief Main function
@@ -24,7 +27,26 @@ int problem_2_12(void);
  * @return int 
  */
 int main (int argc, char *argv[]) {
-  problem_2_11();
+  int choiceProblem = 0;
+  printf("Please Select the Problem to Run:\n");
+  printf("1. Problem 2.11\n");
+  printf("2. Problem 2.12\n");
+  printf("3. Problem 2.22\n");
+  scanf("%d", &choiceProblem);
+  switch (choiceProblem) {
+    case 1:
+      problem_2_11();
+      break;
+    case 2:
+      problem_2_12();
+      break;
+    case 3:
+      problem_2_22();
+      break;
+    default:
+      printf("Invalid Choice.\n");
+      break;
+  }
   return 0;
 }
 
@@ -136,6 +158,30 @@ int problem_2_11() {
 
 }
 
+int problem_2_22() {
+  pLinkedList pLL_222 = createLinkedList();
+  insertNode(pLL_222, 1);
+  insertNode(pLL_222, 1);
+  insertNode(pLL_222, 4);
+  insertNode(pLL_222, 5);
+  insertNode(pLL_222, 1);
+  insertNode(pLL_222, 4);
+
+  printf("The Origin LinkedList:\n");
+  printLinkedList(pLL_222);
+
+  // To reverse the LinkedList
+  reverseLinkedList(pLL_222);
+
+  printf("The Reserved LinkedList:");
+  printLinkedList(pLL_222);
+
+  // Free memory of LinkedList
+  freeLinkedList(pLL_222);
+
+  return 0;
+}
+
 int problem_2_12() {
-  
+  return 0;
 }

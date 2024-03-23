@@ -122,6 +122,33 @@ HW2/fast:
 	$(MAKE) -f CMakeFiles\HW2.dir\build.make CMakeFiles/HW2.dir/build
 .PHONY : HW2/fast
 
+LinkedList/LinkedList.obj: LinkedList/LinkedList.c.obj
+
+.PHONY : LinkedList/LinkedList.obj
+
+# target to build an object file
+LinkedList/LinkedList.c.obj:
+	$(MAKE) -f CMakeFiles\HW2.dir\build.make CMakeFiles/HW2.dir/LinkedList/LinkedList.c.obj
+.PHONY : LinkedList/LinkedList.c.obj
+
+LinkedList/LinkedList.i: LinkedList/LinkedList.c.i
+
+.PHONY : LinkedList/LinkedList.i
+
+# target to preprocess a source file
+LinkedList/LinkedList.c.i:
+	$(MAKE) -f CMakeFiles\HW2.dir\build.make CMakeFiles/HW2.dir/LinkedList/LinkedList.c.i
+.PHONY : LinkedList/LinkedList.c.i
+
+LinkedList/LinkedList.s: LinkedList/LinkedList.c.s
+
+.PHONY : LinkedList/LinkedList.s
+
+# target to generate assembly for a file
+LinkedList/LinkedList.c.s:
+	$(MAKE) -f CMakeFiles\HW2.dir\build.make CMakeFiles/HW2.dir/LinkedList/LinkedList.c.s
+.PHONY : LinkedList/LinkedList.c.s
+
 SeqList/SeqList.obj: SeqList/SeqList.c.obj
 
 .PHONY : SeqList/SeqList.obj
@@ -185,6 +212,9 @@ help:
 	@echo ... HW2
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... LinkedList/LinkedList.obj
+	@echo ... LinkedList/LinkedList.i
+	@echo ... LinkedList/LinkedList.s
 	@echo ... SeqList/SeqList.obj
 	@echo ... SeqList/SeqList.i
 	@echo ... SeqList/SeqList.s

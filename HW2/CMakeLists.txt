@@ -5,11 +5,13 @@ project(HW2)
 set(SOURCES
     hw2.c
     SeqList/SeqList.c
+    LinkedList/LinkedList.c
 )
 
 # Add your header files here
 set(HEADERS
     SeqList/SeqList.h
+    LinkedList/LinkedList.h
     # include/bar.h
 )
 

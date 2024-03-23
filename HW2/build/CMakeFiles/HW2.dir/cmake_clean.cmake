@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/HW2.dir/LinkedList/LinkedList.c.obj"
   "CMakeFiles/HW2.dir/SeqList/SeqList.c.obj"
   "CMakeFiles/HW2.dir/hw2.c.obj"
   "bin/HW2.exe"

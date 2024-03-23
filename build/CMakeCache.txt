@@ -312,7 +312,7 @@ DSExercise_BINARY_DIR:STATIC=D:/Codefield/DS/build
 DSExercise_SOURCE_DIR:STATIC=D:/Codefield/DS/DSExercise
 
 //Path to a program.
-GITCOMMAND:FILEPATH=GITCOMMAND-NOTFOUND
+GITCOMMAND:FILEPATH=C:/Program Files/Git/cmd/git.exe
 
 //Path to a program.
 HGCOMMAND:FILEPATH=HGCOMMAND-NOTFOUND
