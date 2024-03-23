@@ -4,7 +4,19 @@
 #include <stdlib.h>
 
 int reverseLinkedList(pLinkedList head) {
-//TODO
+    pLinkedList prev = NULL;
+    pLinkedList current = head->next;
+    pLinkedList next = NULL;
+
+    while (current != NULL) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+
+    head->next = prev;
+
     return 0;
 }
 
