@@ -164,6 +164,7 @@ int problem_2_22() {
   pLinkedList pLL_222 = createLinkedList();
 
   // Insert elements into LinkedList
+  printf("Please Input the LinkedList:\n");
   inputLinkedList(pLL_222);
   printf("The Origin LinkedList:\n");
   printLinkedList(pLL_222);
@@ -171,7 +172,7 @@ int problem_2_22() {
   // To reverse the LinkedList
   reverseLinkedList(pLL_222);
 
-  printf("The Reserved LinkedList:");
+  printf("The Reserved LinkedList:\n");
   printLinkedList(pLL_222);
 
   // Free memory of LinkedList
@@ -183,7 +184,6 @@ int problem_2_22() {
 int problem_2_12() {
   pLinkedList pLL_212_A = createLinkedList();
   pLinkedList pLL_212_B = createLinkedList();
-  char buffer[100];
   printf("LinkedList A:\n");
   inputLinkedList(pLL_212_A);
   printf("LinkedList B:\n");

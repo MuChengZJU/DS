@@ -113,8 +113,22 @@ int compareLists(pLinkedList A, pLinkedList B) {
 
 int inputLinkedList(pLinkedList head) {
     int data;
-    while (scanf("%d", &data) == 1) {
+    while (scanf("%d", &data) != EOF) {
         insertNode(head, data);
     }
+    return 0;
+
+    // char buffer[100];
+    // int data;
+    // printf("Please input the data for the LinkedList:\n");
+    // printf("1");
+    // fgets(buffer, 100, stdin);
+    // printf("1");
+    // while (sscanf(buffer, "%d", &data) == 1) {
+    //     printf("1");
+    //     insertNode(head, data);
+    //     fgets(buffer, 100, stdin);
+    // }
+
     return 0;
 }
