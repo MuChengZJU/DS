@@ -15,10 +15,27 @@
 #include "SeqList\SeqList.h"
 #include "LinkedList\LinkedList.h"
 
+/**
+ * @file hw2.c
+ * @brief This file contains the function declarations for problems 2.11, 2.12, and 2.22.
+ */
+
+/**
+ * @brief Problem 2.11 function declaration.
+ * @return The result of problem 2.11.
+ */
 int problem_2_11(void);
 
+/**
+ * @brief Problem 2.12 function declaration.
+ * @return The result of problem 2.12.
+ */
 int problem_2_12(void);
 
+/**
+ * @brief Problem 2.22 function declaration.
+ * @return The result of problem 2.22.
+ */
 int problem_2_22(void);
 
 /**
