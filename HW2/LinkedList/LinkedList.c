@@ -1,3 +1,13 @@
+/**
+ * @file LinkedList.c
+ * @author MuCheng (QuChuanyang@ZJU.edu.cn)
+ * @brief 
+ * @version 0.1
+ * @date 2024-03-19
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 #include "LinkedList.h"
 
 #include <stdio.h>
