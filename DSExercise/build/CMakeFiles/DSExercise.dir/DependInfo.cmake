@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "D:/Codefield/DS/DSExercise/DSExercise.c" "D:/Codefield/DS/DSExercise/build/CMakeFiles/DSExercise.dir/DSExercise.c.obj"
+  "D:/Codefield/DS/DSExercise/LinkedList/LinkedList.c" "D:/Codefield/DS/DSExercise/build/CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.obj"
   "D:/Codefield/DS/DSExercise/MathComplex/Complex.c" "D:/Codefield/DS/DSExercise/build/CMakeFiles/DSExercise.dir/MathComplex/Complex.c.obj"
   "D:/Codefield/DS/DSExercise/MathComplex/MathComplex.c" "D:/Codefield/DS/DSExercise/build/CMakeFiles/DSExercise.dir/MathComplex/MathComplex.c.obj"
   )

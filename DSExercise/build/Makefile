@@ -559,6 +559,33 @@ DSExercise.c.s:
 	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/DSExercise.c.s
 .PHONY : DSExercise.c.s
 
+LinkedList/LinkedList.obj: LinkedList/LinkedList.c.obj
+
+.PHONY : LinkedList/LinkedList.obj
+
+# target to build an object file
+LinkedList/LinkedList.c.obj:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.obj
+.PHONY : LinkedList/LinkedList.c.obj
+
+LinkedList/LinkedList.i: LinkedList/LinkedList.c.i
+
+.PHONY : LinkedList/LinkedList.i
+
+# target to preprocess a source file
+LinkedList/LinkedList.c.i:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.i
+.PHONY : LinkedList/LinkedList.c.i
+
+LinkedList/LinkedList.s: LinkedList/LinkedList.c.s
+
+.PHONY : LinkedList/LinkedList.s
+
+# target to generate assembly for a file
+LinkedList/LinkedList.c.s:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.s
+.PHONY : LinkedList/LinkedList.c.s
+
 MathComplex/Complex.obj: MathComplex/Complex.c.obj
 
 .PHONY : MathComplex/Complex.obj
@@ -657,6 +684,9 @@ help:
 	@echo ... DSExercise.obj
 	@echo ... DSExercise.i
 	@echo ... DSExercise.s
+	@echo ... LinkedList/LinkedList.obj
+	@echo ... LinkedList/LinkedList.i
+	@echo ... LinkedList/LinkedList.s
 	@echo ... MathComplex/Complex.obj
 	@echo ... MathComplex/Complex.i
 	@echo ... MathComplex/Complex.s

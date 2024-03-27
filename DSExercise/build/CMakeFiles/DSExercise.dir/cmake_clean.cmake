@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/DSExercise.dir/DSExercise.c.obj"
+  "CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.obj"
   "CMakeFiles/DSExercise.dir/MathComplex/Complex.c.obj"
   "CMakeFiles/DSExercise.dir/MathComplex/MathComplex.c.obj"
   "DSExercise.exe"
