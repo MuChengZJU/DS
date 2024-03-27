@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+D:/Codefield/DS/HW2/LinkedList/LinkedList.c
+LinkedList.h
+D:/Codefield/DS/HW2/LinkedList/LinkedList.h
+stdio.h
+-
+stdlib.h
+-
+
 D:/Codefield/DS/HW2/LinkedList/LinkedList.h
 
 D:/Codefield/DS/HW2/SeqList/SeqList.h
