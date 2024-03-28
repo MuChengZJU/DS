@@ -9,8 +9,11 @@ add_executable(DSExercise
     MathComplex/MathComplex.c
     MathComplex/Complex.c
     MathComplex/Complex.h
-    LinkedList/LinkedList.c
-    LinkedList/LinkedList.h)
+    DataStructures/LinkedList.c
+    DataStructures/LinkedList.h
+    Polynomial/Polynomial.c
+    Polynomial/Polynomial.h
+    Polynomial/Lab2.c)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

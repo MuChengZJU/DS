@@ -4,6 +4,4 @@
 Tests/CMakeFiles/DSExerciseTest.dir/DSExerciseTest.c.obj: ../MathComplex/Complex.h
 Tests/CMakeFiles/DSExerciseTest.dir/DSExerciseTest.c.obj: ../Tests/DSExerciseTest.c
 
-Tests/CMakeFiles/DSExerciseTest.dir/__/MathComplex/Complex.c.obj: ../MathComplex/Complex.c
-Tests/CMakeFiles/DSExerciseTest.dir/__/MathComplex/Complex.c.obj: ../MathComplex/Complex.h
 

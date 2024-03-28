@@ -1,10 +1,12 @@
 #include "stdio.h"
 #include "stdlib.h"
+#include "Polynomial/Polynomial.h"
 
 #define MAX_BUFF_SIZE (256)
 
 void PrintMenu();
 int MathComplex();
+int polynomialCalcutation();
 
 int main(int argc, char* argv[]) 
 {
@@ -24,11 +26,16 @@ int main(int argc, char* argv[])
 
         case '1':
         case '3':
-            break;;
+            break;
 
         case '2':
             system("cls");
             MathComplex();        
+            break;
+
+        case '4':
+            system("cls");
+            polynomialCalcutation();
             break;
         
         default:
@@ -48,6 +55,7 @@ void PrintMenu()
     printf("--1. 实数四则运算器\n");
     printf("--2. 复数四则运算器\n");
     printf("--3. 线性表练习\n");
+    printf("--4. 多项式运算\n");
     printf("--0. 退出\n\n");
 	printf("=============================================\n\n");
     printf("请输入序号选择你想执行的编程练习: ");

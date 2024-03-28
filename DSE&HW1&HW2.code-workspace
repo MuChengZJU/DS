@@ -12,7 +12,9 @@
 	],
 	"settings": {
 		"files.associations": {
-			"linkedlist.h": "c"
+			"linkedlist.h": "c",
+			"stdlib.h": "c",
+			"stdio.h": "c"
 		}
 	}
 }

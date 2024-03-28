@@ -3,9 +3,15 @@
 
 CMakeFiles/DSExercise.dir/DSExercise.c.obj
  D:/Codefield/DS/DSExercise/DSExercise.c
+ D:/Codefield/DS/DSExercise/Polynomial/Polynomial.h
+CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj
+ D:/Codefield/DS/DSExercise/DataStructures/LinkedList.c
+ D:/Codefield/DS/DSExercise/DataStructures/LinkedList.h
 CMakeFiles/DSExercise.dir/MathComplex/Complex.c.obj
- D:/Codefield/DS/DSExercise/MathComplex/Complex.c
- D:/Codefield/DS/DSExercise/MathComplex/Complex.h
 CMakeFiles/DSExercise.dir/MathComplex/MathComplex.c.obj
- D:/Codefield/DS/DSExercise/MathComplex/Complex.h
- D:/Codefield/DS/DSExercise/MathComplex/MathComplex.c
+CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj
+ D:/Codefield/DS/DSExercise/Polynomial/Lab2.c
+ D:/Codefield/DS/DSExercise/Polynomial/Polynomial.h
+CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.obj
+ D:/Codefield/DS/DSExercise/Polynomial/Polynomial.c
+ D:/Codefield/DS/DSExercise/Polynomial/Polynomial.h

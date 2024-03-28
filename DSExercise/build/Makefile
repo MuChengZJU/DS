@@ -559,32 +559,32 @@ DSExercise.c.s:
 	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/DSExercise.c.s
 .PHONY : DSExercise.c.s
 
-LinkedList/LinkedList.obj: LinkedList/LinkedList.c.obj
+DataStructures/LinkedList.obj: DataStructures/LinkedList.c.obj
 
-.PHONY : LinkedList/LinkedList.obj
+.PHONY : DataStructures/LinkedList.obj
 
 # target to build an object file
-LinkedList/LinkedList.c.obj:
-	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.obj
-.PHONY : LinkedList/LinkedList.c.obj
+DataStructures/LinkedList.c.obj:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj
+.PHONY : DataStructures/LinkedList.c.obj
 
-LinkedList/LinkedList.i: LinkedList/LinkedList.c.i
+DataStructures/LinkedList.i: DataStructures/LinkedList.c.i
 
-.PHONY : LinkedList/LinkedList.i
+.PHONY : DataStructures/LinkedList.i
 
 # target to preprocess a source file
-LinkedList/LinkedList.c.i:
-	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.i
-.PHONY : LinkedList/LinkedList.c.i
+DataStructures/LinkedList.c.i:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.i
+.PHONY : DataStructures/LinkedList.c.i
 
-LinkedList/LinkedList.s: LinkedList/LinkedList.c.s
+DataStructures/LinkedList.s: DataStructures/LinkedList.c.s
 
-.PHONY : LinkedList/LinkedList.s
+.PHONY : DataStructures/LinkedList.s
 
 # target to generate assembly for a file
-LinkedList/LinkedList.c.s:
-	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.s
-.PHONY : LinkedList/LinkedList.c.s
+DataStructures/LinkedList.c.s:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.s
+.PHONY : DataStructures/LinkedList.c.s
 
 MathComplex/Complex.obj: MathComplex/Complex.c.obj
 
@@ -640,6 +640,60 @@ MathComplex/MathComplex.c.s:
 	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/MathComplex/MathComplex.c.s
 .PHONY : MathComplex/MathComplex.c.s
 
+Polynomial/Lab2.obj: Polynomial/Lab2.c.obj
+
+.PHONY : Polynomial/Lab2.obj
+
+# target to build an object file
+Polynomial/Lab2.c.obj:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj
+.PHONY : Polynomial/Lab2.c.obj
+
+Polynomial/Lab2.i: Polynomial/Lab2.c.i
+
+.PHONY : Polynomial/Lab2.i
+
+# target to preprocess a source file
+Polynomial/Lab2.c.i:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.i
+.PHONY : Polynomial/Lab2.c.i
+
+Polynomial/Lab2.s: Polynomial/Lab2.c.s
+
+.PHONY : Polynomial/Lab2.s
+
+# target to generate assembly for a file
+Polynomial/Lab2.c.s:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.s
+.PHONY : Polynomial/Lab2.c.s
+
+Polynomial/Polynomial.obj: Polynomial/Polynomial.c.obj
+
+.PHONY : Polynomial/Polynomial.obj
+
+# target to build an object file
+Polynomial/Polynomial.c.obj:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.obj
+.PHONY : Polynomial/Polynomial.c.obj
+
+Polynomial/Polynomial.i: Polynomial/Polynomial.c.i
+
+.PHONY : Polynomial/Polynomial.i
+
+# target to preprocess a source file
+Polynomial/Polynomial.c.i:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.i
+.PHONY : Polynomial/Polynomial.c.i
+
+Polynomial/Polynomial.s: Polynomial/Polynomial.c.s
+
+.PHONY : Polynomial/Polynomial.s
+
+# target to generate assembly for a file
+Polynomial/Polynomial.c.s:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.s
+.PHONY : Polynomial/Polynomial.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -684,15 +738,21 @@ help:
 	@echo ... DSExercise.obj
 	@echo ... DSExercise.i
 	@echo ... DSExercise.s
-	@echo ... LinkedList/LinkedList.obj
-	@echo ... LinkedList/LinkedList.i
-	@echo ... LinkedList/LinkedList.s
+	@echo ... DataStructures/LinkedList.obj
+	@echo ... DataStructures/LinkedList.i
+	@echo ... DataStructures/LinkedList.s
 	@echo ... MathComplex/Complex.obj
 	@echo ... MathComplex/Complex.i
 	@echo ... MathComplex/Complex.s
 	@echo ... MathComplex/MathComplex.obj
 	@echo ... MathComplex/MathComplex.i
 	@echo ... MathComplex/MathComplex.s
+	@echo ... Polynomial/Lab2.obj
+	@echo ... Polynomial/Lab2.i
+	@echo ... Polynomial/Lab2.s
+	@echo ... Polynomial/Polynomial.obj
+	@echo ... Polynomial/Polynomial.i
+	@echo ... Polynomial/Polynomial.s
 .PHONY : help
 
 

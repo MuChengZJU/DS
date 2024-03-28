@@ -95,25 +95,53 @@ CMakeFiles/DSExercise.dir/MathComplex/Complex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/DSExercise.dir/MathComplex/Complex.c.s"
 	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Codefield\DS\DSExercise\MathComplex\Complex.c -o CMakeFiles\DSExercise.dir\MathComplex\Complex.c.s
 
-CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.obj: CMakeFiles/DSExercise.dir/flags.make
-CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.obj: ../LinkedList/LinkedList.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Codefield\DS\DSExercise\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.obj"
-	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\DSExercise.dir\LinkedList\LinkedList.c.obj   -c D:\Codefield\DS\DSExercise\LinkedList\LinkedList.c
+CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj: CMakeFiles/DSExercise.dir/flags.make
+CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj: ../DataStructures/LinkedList.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Codefield\DS\DSExercise\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj"
+	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\DSExercise.dir\DataStructures\LinkedList.c.obj   -c D:\Codefield\DS\DSExercise\DataStructures\LinkedList.c
 
-CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.i"
-	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Codefield\DS\DSExercise\LinkedList\LinkedList.c > CMakeFiles\DSExercise.dir\LinkedList\LinkedList.c.i
+CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.i"
+	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Codefield\DS\DSExercise\DataStructures\LinkedList.c > CMakeFiles\DSExercise.dir\DataStructures\LinkedList.c.i
 
-CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.s"
-	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Codefield\DS\DSExercise\LinkedList\LinkedList.c -o CMakeFiles\DSExercise.dir\LinkedList\LinkedList.c.s
+CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.s"
+	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Codefield\DS\DSExercise\DataStructures\LinkedList.c -o CMakeFiles\DSExercise.dir\DataStructures\LinkedList.c.s
+
+CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.obj: CMakeFiles/DSExercise.dir/flags.make
+CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.obj: ../Polynomial/Polynomial.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Codefield\DS\DSExercise\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.obj"
+	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\DSExercise.dir\Polynomial\Polynomial.c.obj   -c D:\Codefield\DS\DSExercise\Polynomial\Polynomial.c
+
+CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.i"
+	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Codefield\DS\DSExercise\Polynomial\Polynomial.c > CMakeFiles\DSExercise.dir\Polynomial\Polynomial.c.i
+
+CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.s"
+	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Codefield\DS\DSExercise\Polynomial\Polynomial.c -o CMakeFiles\DSExercise.dir\Polynomial\Polynomial.c.s
+
+CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj: CMakeFiles/DSExercise.dir/flags.make
+CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj: ../Polynomial/Lab2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Codefield\DS\DSExercise\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj"
+	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\DSExercise.dir\Polynomial\Lab2.c.obj   -c D:\Codefield\DS\DSExercise\Polynomial\Lab2.c
+
+CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.i"
+	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Codefield\DS\DSExercise\Polynomial\Lab2.c > CMakeFiles\DSExercise.dir\Polynomial\Lab2.c.i
+
+CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.s"
+	C:\PROGRA~1\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Codefield\DS\DSExercise\Polynomial\Lab2.c -o CMakeFiles\DSExercise.dir\Polynomial\Lab2.c.s
 
 # Object files for target DSExercise
 DSExercise_OBJECTS = \
 "CMakeFiles/DSExercise.dir/DSExercise.c.obj" \
 "CMakeFiles/DSExercise.dir/MathComplex/MathComplex.c.obj" \
 "CMakeFiles/DSExercise.dir/MathComplex/Complex.c.obj" \
-"CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.obj"
+"CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj" \
+"CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.obj" \
+"CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj"
 
 # External object files for target DSExercise
 DSExercise_EXTERNAL_OBJECTS =
@@ -121,12 +149,14 @@ DSExercise_EXTERNAL_OBJECTS =
 DSExercise.exe: CMakeFiles/DSExercise.dir/DSExercise.c.obj
 DSExercise.exe: CMakeFiles/DSExercise.dir/MathComplex/MathComplex.c.obj
 DSExercise.exe: CMakeFiles/DSExercise.dir/MathComplex/Complex.c.obj
-DSExercise.exe: CMakeFiles/DSExercise.dir/LinkedList/LinkedList.c.obj
+DSExercise.exe: CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj
+DSExercise.exe: CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.obj
+DSExercise.exe: CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj
 DSExercise.exe: CMakeFiles/DSExercise.dir/build.make
 DSExercise.exe: CMakeFiles/DSExercise.dir/linklibs.rsp
 DSExercise.exe: CMakeFiles/DSExercise.dir/objects1.rsp
 DSExercise.exe: CMakeFiles/DSExercise.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Codefield\DS\DSExercise\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable DSExercise.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Codefield\DS\DSExercise\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable DSExercise.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\DSExercise.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
