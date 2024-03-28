@@ -34,7 +34,6 @@ int main(int argc, char* argv[])
             break;
 
         case '4':
-            system("cls");
             polynomialCalcutation();
             break;
         
@@ -50,7 +49,7 @@ int main(int argc, char* argv[])
 
 void PrintMenu()
 {
-    system("cls");
+    // system("cls");
 	printf("===========数据结构与算法分析编程练习集===========\n\n");
     printf("--1. 实数四则运算器\n");
     printf("--2. 复数四则运算器\n");

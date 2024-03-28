@@ -40,8 +40,7 @@ int polynomialCalcutation() {
     printf("The result of multiplication is:\n");
     printPoly(result);
 
-    printf("Press any key to continue...\n");
-    getchar();
+    system("pause");
 
     destroyPoly(poly1);
     destroyPoly(poly2);

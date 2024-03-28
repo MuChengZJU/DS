@@ -126,6 +126,11 @@ void printPoly(pPoly poly) {
         printf("0\n");
         return;
     }
+
+    // First term
+    if (p->coef < 0) {
+        printf("-");
+    }
     if (p->exp == 0) {
         printf("%.2f", p->coef);
     } else if (p->exp == 1) {
@@ -133,6 +138,8 @@ void printPoly(pPoly poly) {
     } else {
         printf("%.2fx^%d", p->coef, p->exp);
     }
+
+    // Rest terms
     p = p->next;
     while (p != NULL) {
         if (p->exp == 0) {
