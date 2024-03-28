@@ -64,4 +64,6 @@ void mulPoly(pPoly poly1, pPoly poly2, pPoly result);
  */
 void printPoly(pPoly poly);
 
+void sortPoly(pPoly poly);
+
 #endif // POLYNOMIAL_H

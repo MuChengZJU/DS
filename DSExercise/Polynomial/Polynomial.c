@@ -83,7 +83,7 @@ void subPoly(pPoly poly1, pPoly poly2, pPoly result) {
     pPoly r = result;
     while (p != NULL && q != NULL) {
         if (p->exp < q->exp) {
-            insertTerm(r, - q->coef, q->exp);
+            insertTerm(r, -q->coef, q->exp);
             q = q->next;
         } else if (p->exp > q->exp) {
             insertTerm(r, p->coef, p->exp);
@@ -99,7 +99,7 @@ void subPoly(pPoly poly1, pPoly poly2, pPoly result) {
         p = p->next;
     }
     while (q != NULL) {
-        insertTerm(r, - q->coef, q->exp);
+        insertTerm(r, -q->coef, q->exp);
         q = q->next;
     }
 
@@ -120,7 +120,7 @@ void mulPoly(pPoly poly1, pPoly poly2, pPoly result) {
 
 }
 
-void printPoly(pPoly poly) {
+void printPoly(pPoly poly) {    
     pPoly p = poly->next;
     if (p == NULL) {
         printf("0\n");
@@ -152,4 +152,23 @@ void printPoly(pPoly poly) {
         p = p->next;
     }
     printf("\n");
+}
+
+void sortPoly(pPoly poly) {
+    pPoly p = poly->next;
+    pPoly q = p->next;
+    while (p != NULL) {
+        while (q != NULL) {
+            if (p->exp < q->exp) {
+                double tempCoef = p->coef;
+                int tempExp = p->exp;
+                p->coef = q->coef;
+                p->exp = q->exp;
+                q->coef = tempCoef;
+                q->exp = tempExp;
+            }
+            q = q->next;
+        }
+        p = p->next;
+    }
 }

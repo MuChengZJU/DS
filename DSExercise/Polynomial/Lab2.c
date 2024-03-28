@@ -30,14 +30,17 @@ int polynomialCalcutation() {
 
     addPoly(poly1, poly2, result);
     printf("The result of addition is:\n");
+    sortPoly(result);
     printPoly(result);
 
     subPoly(poly1, poly2, result);
     printf("The result of subtraction is:\n");
+    sortPoly(result);
     printPoly(result);
 
     mulPoly(poly1, poly2, result);
     printf("The result of multiplication is:\n");
+    sortPoly(result);
     printPoly(result);
 
     system("pause");
