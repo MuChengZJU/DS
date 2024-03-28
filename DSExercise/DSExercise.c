@@ -34,6 +34,7 @@ int main(int argc, char* argv[])
             break;
 
         case '4':
+            // system("cls");
             polynomialCalcutation();
             break;
         

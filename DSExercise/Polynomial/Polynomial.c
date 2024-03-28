@@ -117,7 +117,7 @@ void mulPoly(pPoly poly1, pPoly poly2, pPoly result) {
         }
         p = p->next;
     }
-
+    result = r;
 }
 
 void printPoly(pPoly poly) {    
@@ -143,11 +143,11 @@ void printPoly(pPoly poly) {
     p = p->next;
     while (p != NULL) {
         if (p->exp == 0) {
-            printf("%+.2f", p->coef);
+            printf(" %+.2f", p->coef);
         } else if (p->exp == 1) {
-            printf("%+.2fx", p->coef);
+            printf(" %+.2fx", p->coef);
         } else {
-            printf("%+.2fx^%d", p->coef, p->exp);
+            printf(" %+.2fx^%d", p->coef, p->exp);
         }
         p = p->next;
     }
