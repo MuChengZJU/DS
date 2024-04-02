@@ -13,7 +13,7 @@ pPoly createPoly() {
 }
 
 void destroyPoly(pPoly poly) {
-    pPoly p = poly;
+    pPoly p = poly->next;
     while (p != NULL) {
         pPoly q = p;
         p = p->next;
@@ -120,15 +120,14 @@ void mulPoly(pPoly poly1, pPoly poly2, pPoly result) {
 
 void printPoly(pPoly poly) {    
     pPoly p = poly->next;
+
+    // Empty polynomial
     if (p == NULL) {
         printf("0\n");
         return;
     }
 
     // First term
-    if (p->coef < 0) {
-        printf("-");
-    }
     if (p->exp == 0) {
         printf("%.2f", p->coef);
     } else if (p->exp == 1) {
