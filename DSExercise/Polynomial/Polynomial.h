@@ -28,7 +28,7 @@ pPoly createPoly();
 void destroyPoly(pPoly poly);
 
 /**
- * @brief Inserts a NEW term at the end of the polynomial. NOT in order.
+ * @brief Inserts a NEW term at the end of the polynomial in the SIMPLIST way. NOT in order. May REPEAT.
  * 
  * @param poly The polynomial to insert the term into.
  * @param coef The coefficient of the term.
