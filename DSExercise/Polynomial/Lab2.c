@@ -8,31 +8,34 @@ int polynomialCalcutation() {
     // Init Polynomials
     pPoly poly1 = createPoly();
     pPoly poly2 = createPoly();
-    pPoly result = createPoly();
 
-    
+    inputPoly(poly1, poly2);
+    sortPoly(poly1);
+    sortPoly(poly2);
+
     printf("The first polynomial is:\n");
     printPoly(poly1);
     printf("The second polynomial is:\n");
     printPoly(poly2);
     
+    pPoly result = createPoly();
     addPoly(poly1, poly2, result);
     printf("The result of addition is:\n");
-    sortPoly(result);
+    // sortPoly(result); // result should be already sorted
     printPoly(result);
     destroyPoly(result);
 
     result = createPoly();
     subPoly(poly1, poly2, result);
     printf("The result of subtraction is:\n");
-    sortPoly(result);
+    // sortPoly(result);
     printPoly(result);
     destroyPoly(result);
 
     result = createPoly();
     mulPoly(poly1, poly2, result);
     printf("The result of multiplication is:\n");
-    sortPoly(result);
+    // sortPoly(result);
     printPoly(result);
     destroyPoly(result);
 
@@ -40,7 +43,6 @@ int polynomialCalcutation() {
 
     destroyPoly(poly1);
     destroyPoly(poly2);
-    destroyPoly(result);
 
     // return 0;
 }
