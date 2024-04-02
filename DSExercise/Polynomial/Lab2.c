@@ -9,10 +9,8 @@ int polynomialCalcutation() {
     pPoly poly1 = createPoly();
     pPoly poly2 = createPoly();
 
+    // Input Polynomials
     inputPoly(poly1, poly2);
-    sortPoly(poly1);
-    sortPoly(poly2);
-
     printf("The first polynomial is:\n");
     printPoly(poly1);
     printf("The second polynomial is:\n");
@@ -89,6 +87,11 @@ int inputPoly(pPoly poly1, pPoly poly2) {
             insertTerm(poly2, coef, exp);
         }
     }
+
+    // Sort Polynomials
+    sortPoly(poly1);
+    sortPoly(poly2);
+    // printf("Polynomials sorted\n"); // Debug
 
     return 0;
 }
