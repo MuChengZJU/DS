@@ -4,12 +4,14 @@
 /**
  * @struct PolyNode
  * @brief Structure representing a node in a polynomial.
+ * @brief Because of insertTerm, the first node is a dummy node.
+ * @brief So that every time init the polynomial, SHOULD start with poly->next.
  */
 typedef struct PolyNode{
     double coef; /**< Coefficient of the term */
     int exp; /**< Exponent of the term */
     struct PolyNode *next; /**< Pointer to the next node */
-} PolyNode, *pPoly; /**< pPoly point to the first node WITH data*/
+} PolyNode, *pPoly;
 
 /**
  * @brief Creates a new polynomial.
@@ -26,7 +28,7 @@ pPoly createPoly();
 void destroyPoly(pPoly poly);
 
 /**
- * @brief Inserts a term at the end of the polynomial. NOT in order.
+ * @brief Inserts a NEW term at the end of the polynomial. NOT in order.
  * 
  * @param poly The polynomial to insert the term into.
  * @param coef The coefficient of the term.

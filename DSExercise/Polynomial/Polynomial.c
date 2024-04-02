@@ -13,7 +13,7 @@ pPoly createPoly() {
 }
 
 void destroyPoly(pPoly poly) {
-    pPoly p = poly->next;
+    pPoly p = poly;
     while (p != NULL) {
         pPoly q = p;
         p = p->next;
@@ -23,6 +23,10 @@ void destroyPoly(pPoly poly) {
 }
 
 void insertTerm(pPoly poly, double coef, int exp) {
+    if (coef == 0) {
+        return;
+    }
+
     // Init Pointer and Find the Last Term
     pPoly p = poly;
     while (p->next != NULL) {
@@ -149,7 +153,7 @@ void printPoly(pPoly poly) {
 }
 
 void sortPoly(pPoly poly) {
-    pPoly p = poly;
+    pPoly p = poly->next;
     pPoly q = p->next;
     while (p != NULL) {
         while (q != NULL) {
