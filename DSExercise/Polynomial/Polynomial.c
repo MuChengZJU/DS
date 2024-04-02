@@ -103,6 +103,8 @@ void subPoly(pPoly poly1, pPoly poly2, pPoly result) {
         q = q->next;
     }
 
+    result = r;
+
 }
 
 void mulPoly(pPoly poly1, pPoly poly2, pPoly result) {

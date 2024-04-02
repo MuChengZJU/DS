@@ -39,7 +39,11 @@ int polynomialCalcutation() {
         }
         insertTerm(poly2, coef, exp);
     }
-
+    printf("The first polynomial is:\n");
+    printPoly(poly1);
+    printf("The second polynomial is:\n");
+    printPoly(poly2);
+    
     addPoly(poly1, poly2, result);
     printf("The result of addition is:\n");
     sortPoly(result);
