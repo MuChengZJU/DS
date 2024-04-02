@@ -62,13 +62,15 @@ int inputPoly(pPoly poly1, pPoly poly2) {
         printf("Invalid input\n");
         return 1;
     }
-    printf("Please input polynomial 1 ( Coef0 Exp0 Coef1 Exp1 ...):\n");
+    printf("Please input first polynomial ( Coef0 Exp0 Coef1 Exp1 ...):\n");
     for (int i = 0; i < length; i++) {
         if (scanf("%lf %d", &coef, &exp) != 2) {
             printf("Invalid input\n");
             return 1;
         }
-        insertTerm(poly1, coef, exp);
+        else {
+            insertTerm(poly1, coef, exp);
+        }
     }
 
     // Input second polynomial
@@ -77,13 +79,15 @@ int inputPoly(pPoly poly1, pPoly poly2) {
         printf("Invalid input\n");
         return 1;
     }
-    printf("Please input polynomial 2 ( Coef0 Exp0 Coef1 Exp1 ...):\n");
+    printf("Please input second polynomial ( Coef0 Exp0 Coef1 Exp1 ...):\n");
     for (int i = 0; i < length; i++) {
         if (scanf("%lf %d", &coef, &exp) != 2) {
             printf("Invalid input\n");
             return 1;
         }
-        insertTerm(poly2, coef, exp);
+        else {
+            insertTerm(poly2, coef, exp);
+        }
     }
 
     return 0;
