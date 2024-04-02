@@ -22,7 +22,7 @@ pPoly createPoly();
 void destroyPoly(pPoly poly);
 
 /**
- * @brief Inserts a term into the polynomial.
+ * @brief Inserts a term at the end of the polynomial. NOT in order.
  * 
  * @param poly The polynomial to insert the term into.
  * @param coef The coefficient of the term.
