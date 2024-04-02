@@ -149,11 +149,12 @@ void printPoly(pPoly poly) {
 }
 
 void sortPoly(pPoly poly) {
-    pPoly p = poly->next;
+    pPoly p = poly;
     pPoly q = p->next;
     while (p != NULL) {
         while (q != NULL) {
             if (p->exp < q->exp) {
+                // Swap
                 double tempCoef = p->coef;
                 int tempExp = p->exp;
                 p->coef = q->coef;

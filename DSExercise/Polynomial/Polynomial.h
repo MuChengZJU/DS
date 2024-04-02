@@ -1,11 +1,15 @@
 #ifndef POLYNOMIAL_H
 #define POLYNOMIAL_H
 
+/**
+ * @struct PolyNode
+ * @brief Structure representing a node in a polynomial.
+ */
 typedef struct PolyNode{
-    double coef;
-    int exp;
-    struct PolyNode *next;
-} PolyNode, *pPoly;
+    double coef; /**< Coefficient of the term */
+    int exp; /**< Exponent of the term */
+    struct PolyNode *next; /**< Pointer to the next node */
+} PolyNode, *pPoly; /**< pPoly point to the first node WITH data*/
 
 /**
  * @brief Creates a new polynomial.
