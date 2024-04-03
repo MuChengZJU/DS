@@ -49,7 +49,7 @@ void addPoly(pPoly poly1, pPoly poly2, pPoly result) {
     pPoly p = poly1->next;
     pPoly q = poly2->next;
     pPoly r = result;
-    while (p != NULL && q != NULL) {
+    while (p->next != NULL && q->next != NULL) {
         if (p->exp < q->exp) {
             insertTerm(r, q->coef, q->exp);
             q = q->next;
@@ -107,15 +107,35 @@ void mulPoly(pPoly poly1, pPoly poly2, pPoly result) {
     pPoly p = poly1->next;
     pPoly q = poly2->next;
     pPoly r = result;
+
+    double tempCoef;
+    int tempExp;
+
     while (p != NULL) {
 
         q = poly2->next;
         while (q != NULL) {
-            pPoly tempPoly = createPoly();
-            insertTerm(tempPoly, p->coef * q->coef, p->exp + q->exp);
-            addPoly(r, tempPoly, r);
-            destroyPoly(tempPoly);
+            r = result;
+            tempCoef = p->coef * q->coef;
+            tempExp = p->exp + q->exp;
 
+            while (r->next != NULL && r->next->exp >= tempExp) {
+                r = r->next;
+            }
+            if (r->exp == tempExp) {
+                r->coef += tempCoef;
+            } else {
+                pPoly newTerm = (pPoly)malloc(sizeof(PolyNode));
+                if (newTerm == NULL) {
+                    printf("Memory allocation failed\n");
+                    exit(1);
+                }
+                newTerm->coef = tempCoef;
+                newTerm->exp = tempExp;
+                newTerm->next = r->next;
+                r->next = newTerm;
+            }
+        
             q = q->next;
         }
 
@@ -135,22 +155,22 @@ void printPoly(pPoly poly) {
 
     // First term
     if (p->exp == 0) {
-        printf("%.2f", p->coef);
+        printf("%.6f", p->coef);
     } else if (p->exp == 1) {
-        printf("%.2fx", p->coef);
+        printf("%.6fx", p->coef);
     } else {
-        printf("%.2fx^%d", p->coef, p->exp);
+        printf("%.6fx^%d", p->coef, p->exp);
     }
 
     // Rest terms
     p = p->next;
     while (p != NULL) {
         if (p->exp == 0) {
-            printf(" %+.2f", p->coef);
+            printf(" %+.6f", p->coef);
         } else if (p->exp == 1) {
-            printf(" %+.2fx", p->coef);
+            printf(" %+.6fx", p->coef);
         } else {
-            printf(" %+.2fx^%d", p->coef, p->exp);
+            printf(" %+.6fx^%d", p->coef, p->exp);
         }
         p = p->next;
     }

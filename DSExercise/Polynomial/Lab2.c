@@ -16,6 +16,7 @@ int polynomialCalcutation() {
     printf("The second polynomial is:\n");
     printPoly(poly2);
     
+    // Addition
     pPoly result = createPoly();
     addPoly(poly1, poly2, result);
     printf("The result of addition is:\n");
@@ -23,6 +24,7 @@ int polynomialCalcutation() {
     printPoly(result);
     destroyPoly(result);
 
+    // Subtract
     result = createPoly();
     subPoly(poly1, poly2, result);
     printf("The result of subtraction is:\n");
@@ -30,6 +32,7 @@ int polynomialCalcutation() {
     printPoly(result);
     destroyPoly(result);
 
+    // Multiply
     result = createPoly();
     mulPoly(poly1, poly2, result);
     printf("The result of multiplication is:\n");
