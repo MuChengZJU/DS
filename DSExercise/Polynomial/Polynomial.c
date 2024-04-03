@@ -108,11 +108,17 @@ void mulPoly(pPoly poly1, pPoly poly2, pPoly result) {
     pPoly q = poly2->next;
     pPoly r = result;
     while (p != NULL) {
+
         q = poly2->next;
         while (q != NULL) {
-            insertTerm(r, p->coef * q->coef, p->exp + q->exp);
+            pPoly tempPoly = createPoly();
+            insertTerm(tempPoly, p->coef * q->coef, p->exp + q->exp);
+            addPoly(r, tempPoly, r);
+            destroyPoly(tempPoly);
+
             q = q->next;
         }
+
         p = p->next;
     }
     result = r;
