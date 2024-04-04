@@ -140,6 +140,8 @@ void addTerm(pPoly poly, double coef, int exp) {
     if (p->exp == exp) {
         if (p->coef + coef == 0) { // If the new coefficient is 0, delete the term.
             pPoly q = p->next;
+            p->coef = q->coef;
+            p->exp = q->exp;
             p->next = q->next;
             free(q);
         } else { // Otherwise, add the coefficients.
