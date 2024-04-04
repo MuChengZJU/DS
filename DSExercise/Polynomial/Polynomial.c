@@ -138,6 +138,13 @@ void addTerm(pPoly poly, double coef, int exp) {
 
     // If the term already exists, add the coefficients.
     if (p->exp == exp) {
+        if (p->coef + coef == 0) { // If the new coefficient is 0, delete the term.
+            pPoly q = p->next;
+            p->next = q->next;
+            free(q);
+        } else { // Otherwise, add the coefficients.
+            p->coef += coef;
+        }
         p->coef += coef;
     } else { // Otherwise, insert the new term.
         pPoly newTerm = (pPoly)malloc(sizeof(PolyNode));
