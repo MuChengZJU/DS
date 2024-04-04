@@ -80,7 +80,7 @@ void printPoly(pPoly poly);
 void sortPoly(pPoly poly);
 
 /**
- * @brief Add a term to the polynomial. If the term already exists, add the coefficients.
+ * @brief Add a term to the polynomial. If the term already exists, add the coefficients. *Maintain the order*.
  * 
  * @param poly The polynomial to add the term to. 
  * @param coef The coefficient of the term to add.

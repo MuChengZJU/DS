@@ -70,7 +70,7 @@ int inputPoly(pPoly poly1, pPoly poly2) {
             return 1;
         }
         else {
-            insertTerm(poly1, coef, exp);
+            addTerm(poly1, coef, exp);
         }
     }
 
@@ -87,7 +87,7 @@ int inputPoly(pPoly poly1, pPoly poly2) {
             return 1;
         }
         else {
-            insertTerm(poly2, coef, exp);
+            addTerm(poly2, coef, exp);
         }
     }
 

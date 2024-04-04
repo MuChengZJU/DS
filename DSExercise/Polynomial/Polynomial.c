@@ -51,23 +51,23 @@ void addPoly(pPoly poly1, pPoly poly2, pPoly result) {
     pPoly r = result;
     while (p->next != NULL && q->next != NULL) {
         if (p->exp < q->exp) {
-            insertTerm(r, q->coef, q->exp);
+            addTerm(r, q->coef, q->exp);
             q = q->next;
         } else if (p->exp > q->exp) {
-            insertTerm(r, p->coef, p->exp);
+            addTerm(r, p->coef, p->exp);
             p = p->next;
         } else {
-            insertTerm(r, p->coef + q->coef, p->exp);
+            addTerm(r, p->coef + q->coef, p->exp);
             p = p->next;
             q = q->next;
         }
     }
     while (p != NULL) {
-        insertTerm(r, p->coef, p->exp);
+        addTerm(r, p->coef, p->exp);
         p = p->next;
     }
     while (q != NULL) {
-        insertTerm(r, q->coef, q->exp);
+        addTerm(r, q->coef, q->exp);
         q = q->next;
     }
 
@@ -79,23 +79,23 @@ void subPoly(pPoly poly1, pPoly poly2, pPoly result) {
     pPoly r = result;
     while (p != NULL && q != NULL) {
         if (p->exp < q->exp) {
-            insertTerm(r, -q->coef, q->exp);
+            addTerm(r, -q->coef, q->exp);
             q = q->next;
         } else if (p->exp > q->exp) {
-            insertTerm(r, p->coef, p->exp);
+            addTerm(r, p->coef, p->exp);
             p = p->next;
         } else {
-            insertTerm(r, p->coef - q->coef, p->exp);
+            addTerm(r, p->coef - q->coef, p->exp);
             p = p->next;
             q = q->next;
         }
     }
     while (p != NULL) {
-        insertTerm(r, p->coef, p->exp);
+        addTerm(r, p->coef, p->exp);
         p = p->next;
     }
     while (q != NULL) {
-        insertTerm(r, -q->coef, q->exp);
+        addTerm(r, -q->coef, q->exp);
         q = q->next;
     }
 
@@ -119,22 +119,7 @@ void mulPoly(pPoly poly1, pPoly poly2, pPoly result) {
             tempCoef = p->coef * q->coef;
             tempExp = p->exp + q->exp;
 
-            while (r->next != NULL && r->next->exp >= tempExp) {
-                r = r->next;
-            }
-            if (r->exp == tempExp) {
-                r->coef += tempCoef;
-            } else {
-                pPoly newTerm = (pPoly)malloc(sizeof(PolyNode));
-                if (newTerm == NULL) {
-                    printf("Memory allocation failed\n");
-                    exit(1);
-                }
-                newTerm->coef = tempCoef;
-                newTerm->exp = tempExp;
-                newTerm->next = r->next;
-                r->next = newTerm;
-            }
+            addTerm(r, tempCoef, tempExp);
         
             q = q->next;
         }
@@ -198,7 +183,7 @@ void sortPoly(pPoly poly) {
 }
 
 void addTerm(pPoly poly, double coef, int exp) {
-    pPoly p = poly->next;
+    pPoly p = poly;
 
     // To find the term before the term to be inserted. 
     while (p->next != NULL && p->next->exp >= exp) {
