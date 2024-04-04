@@ -27,15 +27,6 @@ pPoly createPoly();
  */
 void destroyPoly(pPoly poly);
 
-// /**
-//  * @brief Inserts a NEW term at the end of the polynomial in the SIMPLIST way. NOT in order. May REPEAT.
-//  * 
-//  * @param poly The polynomial to insert the term into.
-//  * @param coef The coefficient of the term.
-//  * @param exp The exponent of the term.
-//  */
-// void insertTerm(pPoly poly, double coef, int exp);
-
 /**
  * @brief Adds two polynomials and stores the result in another polynomial.
  * 

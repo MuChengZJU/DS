@@ -22,29 +22,6 @@ void destroyPoly(pPoly poly) {
     free(poly);
 }
 
-// void insertTerm(pPoly poly, double coef, int exp) {
-//     if (coef == 0) {
-//         return;
-//     }
-
-//     // Init Pointer and Find the Last Term
-//     pPoly p = poly;
-//     while (p->next != NULL) {
-//         p = p->next;
-//     }
-
-//     // Insert New Term
-//     pPoly newTerm = (pPoly)malloc(sizeof(PolyNode));
-//     if (newTerm == NULL) {
-//         printf("Memory allocation failed\n");
-//         exit(1);
-//     }
-//     newTerm->coef = coef;
-//     newTerm->exp = exp;
-//     newTerm->next = NULL;
-//     p->next = newTerm;
-// }
-
 void addPoly(pPoly poly1, pPoly poly2, pPoly result) {
     pPoly p = poly1->next;
     pPoly q = poly2->next;
