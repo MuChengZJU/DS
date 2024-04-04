@@ -155,11 +155,12 @@ void addTerm(pPoly poly, double coef, int exp) {
                 p->exp = q->exp;   
                 p->next = q->next; 
                 free(q);
+                return;
             }
         } else { // Otherwise, add the coefficients.
             p->coef += coef;
+            return;
         }
-        p->coef += coef;
     } else { // Otherwise, insert the new term.
         pPoly newTerm = (pPoly)malloc(sizeof(PolyNode));
         if (newTerm == NULL) {
@@ -170,5 +171,6 @@ void addTerm(pPoly poly, double coef, int exp) {
         newTerm->exp = exp;
         newTerm->next = p->next;
         p->next = newTerm;
+        return;
     }
 }
