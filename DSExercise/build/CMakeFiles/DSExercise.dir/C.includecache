@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-D:/Codefield/DS/DSExercise/Polynomial/Polynomial.c
-Polynomial.h
-D:/Codefield/DS/DSExercise/Polynomial/Polynomial.h
+D:/Codefield/DS/DSExercise/Polynomial/Lab2.c
 stdio.h
 -
 stdlib.h
 -
+Polynomial.h
+D:/Codefield/DS/DSExercise/Polynomial/Polynomial.h
 
 D:/Codefield/DS/DSExercise/Polynomial/Polynomial.h
 

@@ -27,14 +27,14 @@ pPoly createPoly();
  */
 void destroyPoly(pPoly poly);
 
-/**
- * @brief Inserts a NEW term at the end of the polynomial in the SIMPLIST way. NOT in order. May REPEAT.
- * 
- * @param poly The polynomial to insert the term into.
- * @param coef The coefficient of the term.
- * @param exp The exponent of the term.
- */
-void insertTerm(pPoly poly, double coef, int exp);
+// /**
+//  * @brief Inserts a NEW term at the end of the polynomial in the SIMPLIST way. NOT in order. May REPEAT.
+//  * 
+//  * @param poly The polynomial to insert the term into.
+//  * @param coef The coefficient of the term.
+//  * @param exp The exponent of the term.
+//  */
+// void insertTerm(pPoly poly, double coef, int exp);
 
 /**
  * @brief Adds two polynomials and stores the result in another polynomial.
@@ -78,5 +78,14 @@ void printPoly(pPoly poly);
  * @param poly The polynomial to be sorted.
  */
 void sortPoly(pPoly poly);
+
+/**
+ * @brief Add a term to the polynomial. If the term already exists, add the coefficients.
+ * 
+ * @param poly The polynomial to add the term to. 
+ * @param coef The coefficient of the term to add.
+ * @param exp The exponent of the term to add.
+ */
+void addTerm(pPoly poly, double coef, int exp);
 
 #endif // POLYNOMIAL_H

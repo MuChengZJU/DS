@@ -22,28 +22,28 @@ void destroyPoly(pPoly poly) {
     free(poly);
 }
 
-void insertTerm(pPoly poly, double coef, int exp) {
-    if (coef == 0) {
-        return;
-    }
+// void insertTerm(pPoly poly, double coef, int exp) {
+//     if (coef == 0) {
+//         return;
+//     }
 
-    // Init Pointer and Find the Last Term
-    pPoly p = poly;
-    while (p->next != NULL) {
-        p = p->next;
-    }
+//     // Init Pointer and Find the Last Term
+//     pPoly p = poly;
+//     while (p->next != NULL) {
+//         p = p->next;
+//     }
 
-    // Insert New Term
-    pPoly newTerm = (pPoly)malloc(sizeof(PolyNode));
-    if (newTerm == NULL) {
-        printf("Memory allocation failed\n");
-        exit(1);
-    }
-    newTerm->coef = coef;
-    newTerm->exp = exp;
-    newTerm->next = NULL;
-    p->next = newTerm;
-}
+//     // Insert New Term
+//     pPoly newTerm = (pPoly)malloc(sizeof(PolyNode));
+//     if (newTerm == NULL) {
+//         printf("Memory allocation failed\n");
+//         exit(1);
+//     }
+//     newTerm->coef = coef;
+//     newTerm->exp = exp;
+//     newTerm->next = NULL;
+//     p->next = newTerm;
+// }
 
 void addPoly(pPoly poly1, pPoly poly2, pPoly result) {
     pPoly p = poly1->next;
@@ -195,4 +195,29 @@ void sortPoly(pPoly poly) {
         }
         p = p->next;
     }
+}
+
+void addTerm(pPoly poly, double coef, int exp) {
+    pPoly p = poly->next;
+
+    // To find the term before the term to be inserted. 
+    while (p->next != NULL && p->next->exp >= exp) {
+        p = p->next;
+    }
+
+    // If the term already exists, add the coefficients.
+    if (p->exp == exp) {
+        p->coef += coef;
+    } else { // Otherwise, insert the new term.
+        pPoly newTerm = (pPoly)malloc(sizeof(PolyNode));
+        if (newTerm == NULL) {
+            printf("Memory allocation failed\n");
+            exit(1);
+        }
+        newTerm->coef = coef;
+        newTerm->exp = exp;
+        newTerm->next = p->next;
+        p->next = newTerm;
+    }
+
 }

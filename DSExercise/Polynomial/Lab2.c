@@ -11,15 +11,15 @@ int polynomialCalcutation() {
 
     // Input Polynomials
     inputPoly(poly1, poly2);
-    printf("The first polynomial is:\n");
+    printf("First polynomial :\n");
     printPoly(poly1);
-    printf("The second polynomial is:\n");
+    printf("Second polynomial :\n");
     printPoly(poly2);
     
     // Addition
     pPoly result = createPoly();
     addPoly(poly1, poly2, result);
-    printf("The result of addition is:\n");
+    printf("Addition :\n");
     // sortPoly(result); // result should be already sorted
     printPoly(result);
     destroyPoly(result);
@@ -27,7 +27,7 @@ int polynomialCalcutation() {
     // Subtract
     result = createPoly();
     subPoly(poly1, poly2, result);
-    printf("The result of subtraction is:\n");
+    printf("Subtraction :\n");
     // sortPoly(result);
     printPoly(result);
     destroyPoly(result);
@@ -35,7 +35,7 @@ int polynomialCalcutation() {
     // Multiply
     result = createPoly();
     mulPoly(poly1, poly2, result);
-    printf("The result of multiplication is:\n");
+    printf("Multiplication :\n");
     // sortPoly(result);
     printPoly(result);
     destroyPoly(result);
