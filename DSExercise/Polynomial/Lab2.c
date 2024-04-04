@@ -20,7 +20,6 @@ int polynomialCalcutation() {
     pPoly result = createPoly();
     addPoly(poly1, poly2, result);
     printf("Addition :\n");
-    // sortPoly(result); // result should be already sorted
     printPoly(result);
     destroyPoly(result);
 
@@ -28,7 +27,6 @@ int polynomialCalcutation() {
     result = createPoly();
     subPoly(poly1, poly2, result);
     printf("Subtraction :\n");
-    // sortPoly(result);
     printPoly(result);
     destroyPoly(result);
 
@@ -36,7 +34,6 @@ int polynomialCalcutation() {
     result = createPoly();
     mulPoly(poly1, poly2, result);
     printf("Multiplication :\n");
-    // sortPoly(result);
     printPoly(result);
     destroyPoly(result);
 
@@ -90,11 +87,6 @@ int inputPoly(pPoly poly1, pPoly poly2) {
             addTerm(poly2, coef, exp);
         }
     }
-
-    // Sort Polynomials
-    sortPoly(poly1);
-    sortPoly(poly2);
-    // printf("Polynomials sorted\n"); // Debug
 
     return 0;
 }

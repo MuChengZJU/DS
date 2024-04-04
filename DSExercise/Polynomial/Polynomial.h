@@ -70,14 +70,6 @@ void mulPoly(pPoly poly1, pPoly poly2, pPoly result);
  */
 void printPoly(pPoly poly);
 
-/**
- * @brief Sorts the polynomial in descending order of exponents.
- *
- * This function sorts the polynomial in descending order of exponents.
- *
- * @param poly The polynomial to be sorted.
- */
-void sortPoly(pPoly poly);
 
 /**
  * @brief Add a term to the polynomial. If the term already exists, add the coefficients. *Maintain the order*.

@@ -162,26 +162,6 @@ void printPoly(pPoly poly) {
     printf("\n");
 }
 
-void sortPoly(pPoly poly) {
-    pPoly p = poly->next;
-    pPoly q = p->next;
-    while (p != NULL) {
-        while (q != NULL) {
-            if (p->exp < q->exp) {
-                // Swap
-                double tempCoef = p->coef;
-                int tempExp = p->exp;
-                p->coef = q->coef;
-                p->exp = q->exp;
-                q->coef = tempCoef;
-                q->exp = tempExp;
-            }
-            q = q->next;
-        }
-        p = p->next;
-    }
-}
-
 void addTerm(pPoly poly, double coef, int exp) {
     pPoly p = poly;
 
