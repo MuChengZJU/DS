@@ -10,7 +10,9 @@ int polynomialCalcutation() {
     pPoly poly2 = createPoly();
 
     // Input Polynomials
-    inputPoly(poly1, poly2);
+    if(inputPoly(poly1, poly2)) {
+        return 1;
+    }
     printf("First polynomial :\n");
     printPoly(poly1);
     printf("Second polynomial :\n");

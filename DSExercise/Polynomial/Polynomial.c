@@ -103,9 +103,21 @@ void printPoly(pPoly poly) {
     if (p->exp == 0) {
         printf("%.6f", p->coef);
     } else if (p->exp == 1) {
-        printf("%.6fx", p->coef);
+        if (p->coef == 1) {
+            printf("x");
+        } else if (p->coef == -1) {
+            printf("-x");
+        } else{
+            printf("%.6fx", p->coef);
+        }
     } else {
-        printf("%.6fx^%d", p->coef, p->exp);
+        if (p->coef == 1) {
+            printf("x^%d", p->exp);
+        } else if (p->coef == -1) {
+            printf("-x^%d", p->exp);
+        } else {
+            printf("%.6fx^%d", p->coef, p->exp);
+        }
     }
 
     // Rest terms
@@ -114,9 +126,21 @@ void printPoly(pPoly poly) {
         if (p->exp == 0) {
             printf(" %+.6f", p->coef);
         } else if (p->exp == 1) {
-            printf(" %+.6fx", p->coef);
+            if (p->coef == 1) {
+                printf(" +x");
+            } else if (p->coef == -1) {
+                printf(" -x");
+            } else {
+                printf(" %+.6fx", p->coef);
+            }
         } else {
-            printf(" %+.6fx^%d", p->coef, p->exp);
+            if (p->coef == 1) {
+                printf(" +x^%d", p->exp);
+            } else if (p->coef == -1) {
+                printf(" -x^%d", p->exp);
+            } else {
+                printf(" %+.6fx^%d", p->coef, p->exp);
+            }
         }
         p = p->next;
     }
