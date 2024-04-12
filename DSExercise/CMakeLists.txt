@@ -13,7 +13,9 @@ add_executable(DSExercise
     DataStructures/LinkedList.h
     Polynomial/Polynomial.c
     Polynomial/Polynomial.h
-    Polynomial/Lab2.c)
+    Polynomial/Lab2.c
+    Expression/Expression.c
+)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

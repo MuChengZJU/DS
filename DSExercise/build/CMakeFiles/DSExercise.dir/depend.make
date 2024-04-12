@@ -7,6 +7,8 @@ CMakeFiles/DSExercise.dir/DSExercise.c.obj: ../Polynomial/Polynomial.h
 CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj: ../DataStructures/LinkedList.c
 CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj: ../DataStructures/LinkedList.h
 
+CMakeFiles/DSExercise.dir/Expression/Expression.c.obj: ../Expression/Expression.c
+
 
 
 CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj: ../Polynomial/Lab2.c

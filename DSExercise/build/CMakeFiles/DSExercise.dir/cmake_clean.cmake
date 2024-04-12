@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/DSExercise.dir/DSExercise.c.obj"
   "CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj"
+  "CMakeFiles/DSExercise.dir/Expression/Expression.c.obj"
   "CMakeFiles/DSExercise.dir/MathComplex/Complex.c.obj"
   "CMakeFiles/DSExercise.dir/MathComplex/MathComplex.c.obj"
   "CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj"

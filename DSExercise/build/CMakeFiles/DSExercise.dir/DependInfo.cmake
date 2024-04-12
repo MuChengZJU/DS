@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "D:/Codefield/DS/DSExercise/DSExercise.c" "D:/Codefield/DS/DSExercise/build/CMakeFiles/DSExercise.dir/DSExercise.c.obj"
   "D:/Codefield/DS/DSExercise/DataStructures/LinkedList.c" "D:/Codefield/DS/DSExercise/build/CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj"
+  "D:/Codefield/DS/DSExercise/Expression/Expression.c" "D:/Codefield/DS/DSExercise/build/CMakeFiles/DSExercise.dir/Expression/Expression.c.obj"
   "D:/Codefield/DS/DSExercise/MathComplex/Complex.c" "D:/Codefield/DS/DSExercise/build/CMakeFiles/DSExercise.dir/MathComplex/Complex.c.obj"
   "D:/Codefield/DS/DSExercise/MathComplex/MathComplex.c" "D:/Codefield/DS/DSExercise/build/CMakeFiles/DSExercise.dir/MathComplex/MathComplex.c.obj"
   "D:/Codefield/DS/DSExercise/Polynomial/Lab2.c" "D:/Codefield/DS/DSExercise/build/CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj"

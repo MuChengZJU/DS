@@ -586,6 +586,33 @@ DataStructures/LinkedList.c.s:
 	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.s
 .PHONY : DataStructures/LinkedList.c.s
 
+Expression/Expression.obj: Expression/Expression.c.obj
+
+.PHONY : Expression/Expression.obj
+
+# target to build an object file
+Expression/Expression.c.obj:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Expression/Expression.c.obj
+.PHONY : Expression/Expression.c.obj
+
+Expression/Expression.i: Expression/Expression.c.i
+
+.PHONY : Expression/Expression.i
+
+# target to preprocess a source file
+Expression/Expression.c.i:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Expression/Expression.c.i
+.PHONY : Expression/Expression.c.i
+
+Expression/Expression.s: Expression/Expression.c.s
+
+.PHONY : Expression/Expression.s
+
+# target to generate assembly for a file
+Expression/Expression.c.s:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Expression/Expression.c.s
+.PHONY : Expression/Expression.c.s
+
 MathComplex/Complex.obj: MathComplex/Complex.c.obj
 
 .PHONY : MathComplex/Complex.obj
@@ -741,6 +768,9 @@ help:
 	@echo ... DataStructures/LinkedList.obj
 	@echo ... DataStructures/LinkedList.i
 	@echo ... DataStructures/LinkedList.s
+	@echo ... Expression/Expression.obj
+	@echo ... Expression/Expression.i
+	@echo ... Expression/Expression.s
 	@echo ... MathComplex/Complex.obj
 	@echo ... MathComplex/Complex.i
 	@echo ... MathComplex/Complex.s
