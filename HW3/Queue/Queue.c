@@ -4,23 +4,29 @@
 #include <stdio.h>
 
 void initQueue(CircularQueue *queue, int size) {
-    queue->front = -1;
-    queue->rear = -1;
+    queue->front = 0;
+    queue->rear = 1;
     queue->size = size;
     queue->array = (int *)malloc(size * sizeof(int));
     if (queue->array == NULL) {
         printf("Memory allocation failed\n");
         exit(1);
     }
+    queue->array[0] = 0;
+    queue->array[1] = 1;
 }
 
 void enqueue(CircularQueue *queue, int item) {
     queue->rear++;
+    
     if (queue->rear == queue->size) {
         queue->rear = 0;
     }
-    if (queue->front == -1) {
-        queue->front = 0;
+    if (queue->front == queue->rear) {
+        queue->front++;
+        if (queue->front == queue->size) {
+            queue->front = 0;
+        }
     }
     queue->array[queue->rear] = item;
 }

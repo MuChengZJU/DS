@@ -28,9 +28,15 @@ bool isPalindrome(char sequence[]) {
 int kFibonacci(int k) {
     CircularQueue *queue;
     initQueue(queue, k);
-    enqueue(queue, 0);
-    enqueue(queue, 1);
-    
+    printf("0 1 ");
+    while (queue->array[queue->rear] <= MAX_FIBONACCI) {
+        printf("%d ", queue->array[queue->rear]);
+        int newNumber = 0;
+        for (int i = 0; i < k; i++) {
+            newNumber += queue->array[i];
+            enqueue(queue, newNumber);
+        }    
+    }
 }
 
 int main() {

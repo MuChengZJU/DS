@@ -18,7 +18,8 @@
 			"linkedlist.h": "c",
 			"stdlib.h": "c",
 			"stdio.h": "c",
-			"limits": "c"
+			"limits": "c",
+			"array": "c"
 		}
 	}
 }
