@@ -4,6 +4,8 @@ project(HW3)
 # Add your source files here
 set(SOURCES
     hw3.c
+    Queue/Queue.c
+    Queue/Queue.h
 
 )
 
