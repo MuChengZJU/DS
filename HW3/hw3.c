@@ -3,7 +3,7 @@
 #include "Queue/Queue.h"
 
 #define MAX_LENGTH 100
-#define MAX_FIBONACCI 114
+#define MAX_FIBONACCI 514
 
 bool isPalindrome(char sequence[]) {
     int length = 0;
@@ -26,17 +26,48 @@ bool isPalindrome(char sequence[]) {
 }
 
 int kFibonacci(int k) {
-    CircularQueue *queue;
-    initQueue(queue, k);
-    printf("0 1 ");
-    while (queue->array[queue->rear] <= MAX_FIBONACCI) {
-        printf("%d ", queue->array[queue->rear]);
-        int newNumber = 0;
-        for (int i = 0; i < k; i++) {
-            newNumber += queue->array[i];
-            enqueue(queue, newNumber);
-        }    
+    int queue[k];
+    for (int i = 0; i < k; i++) {
+        queue[i] = 0;
     }
+    queue[1] = 1;
+    
+    // Circular Queue is not full
+    if (!queue[k-1]) {
+        for (int i = 2; i < k; i++) {
+            for (int j = 0; j < i; j++) {
+                queue[i] += queue[j];
+            }
+        }
+    }
+
+    // Circular Queue is full
+    while (queue[k-1] <= MAX_FIBONACCI) {
+        // Print the first element
+        printf("%d ", queue[0]);
+
+        // Calculate the next element
+        int temp = 0;
+        for (int i = 0; i < k; i++) {
+            temp += queue[i];
+        }
+
+        // Shift the elements
+        for (int i = 0; i < k-1; i++) {
+            queue[i] = queue[i+1];
+        }
+        queue[k-1] = temp;
+    }
+
+    // Print the rest
+    for (int i = 0; i < k; i++) {
+        if (queue[i] <= MAX_FIBONACCI) {
+            printf("%d ", queue[i]);
+        } else {
+            break;
+        }
+    }
+    return 0;
 }
 
 int main() {
