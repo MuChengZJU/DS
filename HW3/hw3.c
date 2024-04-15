@@ -1,10 +1,15 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "Queue/Queue.h"
 
-#define MAX_LENGTH 100
-#define MAX_FIBONACCI 514
+#define MAX_LENGTH 100 // Maximum length of the character sequence
+#define MAX_FIBONACCI 514 // Maximum value of the Fibonacci sequence
 
+/**
+ * Checks if a given sequence is a palindrome.
+ *
+ * @param sequence The sequence to check.
+ * @return True if the sequence is a palindrome, false otherwise.
+ */
 bool isPalindrome(char sequence[]) {
     int length = 0;
     while (sequence[length] != '@') {
@@ -14,6 +19,7 @@ bool isPalindrome(char sequence[]) {
     int start = 0;
     int end = length - 1;
 
+    // From both ends, check if the characters are equal
     while (start < end) {
         if (sequence[start] != sequence[end]) {
             return false;
@@ -25,6 +31,12 @@ bool isPalindrome(char sequence[]) {
     return true;
 }
 
+/**
+ * Calculates and prints the first k Fibonacci numbers using a circular queue.
+ *
+ * @param k The number of Fibonacci numbers to calculate and print.
+ * @return 0 indicating successful execution of the function.
+ */
 int kFibonacci(int k) {
     int queue[k];
     for (int i = 0; i < k; i++) {
@@ -84,7 +96,7 @@ int main() {
             switch (choice) {
                 case 0:
                     return 0;
-                case 1:
+                case 1: // 3.31
                 {
                     char sequence[MAX_LENGTH];
                     printf("Enter a character sequence (end with '@'): \n");
@@ -98,7 +110,7 @@ int main() {
 
                     break;
                 }
-                case 2:
+                case 2: // 3.32
                 {
                     int k;
                     printf("Enter k (k >= 2): \n");
