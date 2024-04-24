@@ -8,6 +8,7 @@ CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj: ../DataStructures/Lin
 CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj: ../DataStructures/LinkedList.h
 
 CMakeFiles/DSExercise.dir/Expression/Expression.c.obj: ../Expression/Expression.c
+CMakeFiles/DSExercise.dir/Expression/Expression.c.obj: ../Expression/Stack.h
 
 
 
