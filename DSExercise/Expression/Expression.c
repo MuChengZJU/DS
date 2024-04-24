@@ -63,7 +63,7 @@ int Expression(void) {
         return ILLEGAL_INPUT;
     }
     convertInfix2Postfix(infix, postfix);
-    
+
     // Calculate the postfix expression
     calculatePostfix(postfix);
 

@@ -10,6 +10,9 @@ CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj: ../DataStructures/Lin
 CMakeFiles/DSExercise.dir/Expression/Expression.c.obj: ../Expression/Expression.c
 CMakeFiles/DSExercise.dir/Expression/Expression.c.obj: ../Expression/Stack.h
 
+CMakeFiles/DSExercise.dir/Expression/Stack.c.obj: ../Expression/Stack.c
+CMakeFiles/DSExercise.dir/Expression/Stack.c.obj: ../Expression/Stack.h
+
 
 
 CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj: ../Polynomial/Lab2.c

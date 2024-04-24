@@ -9,6 +9,7 @@
  */
 #include "Stack.h"
 #include <stddef.h>
+#include <stdlib.h>
 
 int cStackInit(charStack *cStack) {
     cStack->base = (char *)malloc(STACK_INIT_SIZE * sizeof(char));

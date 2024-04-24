@@ -15,6 +15,8 @@ add_executable(DSExercise
     Polynomial/Polynomial.h
     Polynomial/Lab2.c
     Expression/Expression.c
+    Expression/Stack.c
+    Expression/Stack.h
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

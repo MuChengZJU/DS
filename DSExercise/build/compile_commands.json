@@ -35,6 +35,11 @@
   "file": "D:/Codefield/DS/DSExercise/Expression/Expression.c"
 },
 {
+  "directory": "D:/Codefield/DS/DSExercise/build",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\gcc.exe   -g   -o CMakeFiles\\DSExercise.dir\\Expression\\Stack.c.obj   -c D:\\Codefield\\DS\\DSExercise\\Expression\\Stack.c",
+  "file": "D:/Codefield/DS/DSExercise/Expression/Stack.c"
+},
+{
   "directory": "D:/Codefield/DS/DSExercise/build/Tests",
   "command": "C:\\PROGRA~1\\mingw64\\bin\\gcc.exe   -g   -Wall -Wextra -pedantic -o CMakeFiles\\DSExerciseTest.dir\\DSExerciseTest.c.obj   -c D:\\Codefield\\DS\\DSExercise\\Tests\\DSExerciseTest.c",
   "file": "D:/Codefield/DS/DSExercise/Tests/DSExerciseTest.c"

@@ -613,6 +613,33 @@ Expression/Expression.c.s:
 	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Expression/Expression.c.s
 .PHONY : Expression/Expression.c.s
 
+Expression/Stack.obj: Expression/Stack.c.obj
+
+.PHONY : Expression/Stack.obj
+
+# target to build an object file
+Expression/Stack.c.obj:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Expression/Stack.c.obj
+.PHONY : Expression/Stack.c.obj
+
+Expression/Stack.i: Expression/Stack.c.i
+
+.PHONY : Expression/Stack.i
+
+# target to preprocess a source file
+Expression/Stack.c.i:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Expression/Stack.c.i
+.PHONY : Expression/Stack.c.i
+
+Expression/Stack.s: Expression/Stack.c.s
+
+.PHONY : Expression/Stack.s
+
+# target to generate assembly for a file
+Expression/Stack.c.s:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/Expression/Stack.c.s
+.PHONY : Expression/Stack.c.s
+
 MathComplex/Complex.obj: MathComplex/Complex.c.obj
 
 .PHONY : MathComplex/Complex.obj
@@ -771,6 +798,9 @@ help:
 	@echo ... Expression/Expression.obj
 	@echo ... Expression/Expression.i
 	@echo ... Expression/Expression.s
+	@echo ... Expression/Stack.obj
+	@echo ... Expression/Stack.i
+	@echo ... Expression/Stack.s
 	@echo ... MathComplex/Complex.obj
 	@echo ... MathComplex/Complex.i
 	@echo ... MathComplex/Complex.s
