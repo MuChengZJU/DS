@@ -37,14 +37,14 @@ int Expression(void) {
     int illegalCode = illegalDetect(infix);
     if (illegalCode != OK) {
         switch (illegalCode) {
-        case ILLEGAL_INPUT_BRACKET:
-            printf("Illegal Brackets!\n");
-            break;
-        case ILLEGAL_INPUT_CHARACTER:
-            printf("Illegal Characters!\n");
-            break;
-        default:
-            break;
+            case ILLEGAL_INPUT_BRACKET:
+                printf("Illegal Brackets!\n");
+                break;
+            case ILLEGAL_INPUT_CHARACTER:
+                printf("Illegal Characters!\n");
+                break;
+            default:
+                break;
         }
         return illegalCode;
     }
@@ -53,9 +53,9 @@ int Expression(void) {
 
     convertInfix2Postfix(infix, postfix);
 
-// #if DEBUG
+#if DEBUG
     printf("The postfix expression is: %s\n", postfix);
-// #endif
+#endif
 
     // Calculate the postfix expression
     double result;
@@ -85,19 +85,36 @@ static int illegalDetect (char *infix) {
     }
 
     // Illegal Brackets
+    // Brackets should be matched, and 
     charStack bracketStack;
     cStackInit(&bracketStack);
     for (int i = 0; infix[i] != '='; i++) {
-        if (infix[i] == '(' || infix[i] == '[') {
-            cStackPush(&bracketStack, infix[i]);
-        }
-        if (infix[i] == ')' || infix[i] == ']') {
-            char c;
-            cStackPop(&bracketStack, &c);
-            if (c == '(' && infix[i] != ')') {
+        if (infix[i] == '(') {
+            cStackPush(&bracketStack, '(');
+        } else if (infix[i] == ')') {
+            if (cStackEmpty(&bracketStack)) {
                 return ILLEGAL_INPUT_BRACKET;
             }
-            if (c == '[' && infix[i] != ']') {
+            char c;
+            cStackPop(&bracketStack, &c);
+            if (c != '(') {
+                return ILLEGAL_INPUT_BRACKET;
+            }
+        } else if (infix[i] == '[') {
+            if (cStackEmpty(&bracketStack) || *(bracketStack.top-1) != '(') {
+                return ILLEGAL_INPUT_BRACKET;
+            }
+            cStackPush(&bracketStack, '[');
+        } else if (infix[i] == ']') {
+            if (cStackEmpty(&bracketStack)) {
+                return ILLEGAL_INPUT_BRACKET;
+            }
+            char c;
+            cStackPop(&bracketStack, &c);
+            if (c != '[') {
+                return ILLEGAL_INPUT_BRACKET;
+            }
+            if (cStackEmpty(&bracketStack) || *(bracketStack.top-1) != '(') {
                 return ILLEGAL_INPUT_BRACKET;
             }
         }
@@ -125,7 +142,6 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
             // Number or .
             // Directly send to postfix
             // Using loop to get a complete number
-            // TODO: Negative number
             while ( (infix[i] >= '0' && infix[i] <= '9') || infix[i] == '.') {
                 postfix[j++] = infix[i++];
             }
