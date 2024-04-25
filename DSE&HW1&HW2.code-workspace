@@ -20,7 +20,8 @@
 			"stdio.h": "c",
 			"limits": "c",
 			"array": "c",
-			"stack.h": "c"
+			"stack.h": "c",
+			"cctype": "c"
 		}
 	}
 }

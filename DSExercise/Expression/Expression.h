@@ -38,6 +38,13 @@ static int illegalDetect(char *infix);
  */
 static int calculatePostfix(char *postfix, double *result);
 
+/**
+ * @brief Prefix negative numbers with 0 for minus sign
+ * 
+ * @param infix 
+ * @return int 
+ */
+static int negative2zero(char *infix);
 
 /**
  * @brief 

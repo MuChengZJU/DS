@@ -13,6 +13,10 @@ Expression.h
 D:/Codefield/DS/DSExercise/Expression/Expression.h
 stdio.h
 -
+ctype.h
+-
+string.h
+-
 
 D:/Codefield/DS/DSExercise/Expression/Expression.h
 Stack.h

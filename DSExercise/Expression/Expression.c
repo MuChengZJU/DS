@@ -12,6 +12,8 @@
 #include "Stack.h"
 #include "Expression.h"
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 
 #define MAX_INPUT_SIZE 100
 
@@ -46,11 +48,14 @@ int Expression(void) {
         }
         return illegalCode;
     }
+
+    negative2zero(infix);
+
     convertInfix2Postfix(infix, postfix);
 
-#if DEBUG
+// #if DEBUG
     printf("The postfix expression is: %s\n", postfix);
-#endif
+// #endif
 
     // Calculate the postfix expression
     double result;
@@ -60,7 +65,7 @@ int Expression(void) {
     }
 
     // Output the result
-    printf("The result is: %s\n", postfix);
+    printf("The result is: %lf\n", result);
 
     return OK;
 }
@@ -116,6 +121,14 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
     int j = 0;
     // Iterate over the infix expression, converting it to postfix expression
     for (int i = 0; infix[i] != '='; i++) {
+        // if (infix[i] == '-') {
+        //     // Check Negative Number
+        //     if (i == 0 || infix[i-1] == '(' || infix[i-1] == '[') {
+        //         // Negative Number
+        //         // Directly push to postfix
+        //         postfix[j++] = infix[i++];
+        //     }
+        // }
         if (infix[i] >= '0' && infix[i] <= '9') {
             // Number or .
             // Directly send to postfix
@@ -264,8 +277,28 @@ static int calculatePostfix(char *postfix, double *result) {
 
     // Pop the result
     // double result;
-    dStackPop(&numberStack, &result);
-    sprintf(postfix, "%lf", result);
+    dStackPop(&numberStack, result);
+    // sprintf(postfix, "%lf", result);
+
+    return OK;
+}
+
+static int negative2zero (char *infix) {
+    // Prefix negative numbers with 0 for minus sign
+    for (int i = 0; infix[i] != '='; i++) {
+        if (infix[i] == '-') {
+            if (i == 0 || infix[i-1] == '(' || infix[i-1] == '[') {
+                for (int j = strlen(infix); j > i; j--) {
+                    infix[j] = infix[j-1];
+                }
+                infix[i] = '0';
+            }
+        }
+    }
+
+// #if DEBUG   // Debug
+    printf("The negative2zero infix expression is: %s\n", infix);
+// #endif
 
     return OK;
 }
