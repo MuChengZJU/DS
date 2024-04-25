@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-D:/Codefield/DS/DSExercise/DSExercise.c
-stdio.h
-D:/Codefield/DS/DSExercise/stdio.h
-stdlib.h
-D:/Codefield/DS/DSExercise/stdlib.h
-Polynomial/Polynomial.h
-D:/Codefield/DS/DSExercise/Polynomial/Polynomial.h
-Expression/Expression.h
-D:/Codefield/DS/DSExercise/Expression/Expression.h
-
 D:/Codefield/DS/DSExercise/Expression/Expression.c
 Stack.h
 D:/Codefield/DS/DSExercise/Expression/Stack.h
@@ -32,17 +22,5 @@ D:/Codefield/DS/DSExercise/Expression/Expression.h
 Stack.h
 D:/Codefield/DS/DSExercise/Expression/Stack.h
 
-D:/Codefield/DS/DSExercise/Expression/Stack.c
-Stack.h
 D:/Codefield/DS/DSExercise/Expression/Stack.h
-stddef.h
--
-stdlib.h
--
-stdio.h
--
-
-D:/Codefield/DS/DSExercise/Expression/Stack.h
-
-D:/Codefield/DS/DSExercise/Polynomial/Polynomial.h
 

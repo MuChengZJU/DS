@@ -65,7 +65,7 @@ int Expression(void) {
     }
 
     // Output the result
-    printf("The result is: %lf\n", result);
+    printf("%lf\n", result);
 
     return OK;
 }
@@ -89,41 +89,43 @@ static int illegalDetect (char *infix) {
     charStack bracketStack;
     cStackInit(&bracketStack);
     for (int i = 0; infix[i] != '='; i++) {
-        if (infix[i] == '(') {
-            cStackPush(&bracketStack, '(');
-        } else if (infix[i] == ')') {
-            if (cStackEmpty(&bracketStack)) {
-                return ILLEGAL_INPUT_BRACKET;
+        charStack bracketStack;
+        cStackInit(&bracketStack);
+        char c;
+        for (int i = 0; infix[i] != '='; i++) {
+            switch (infix[i]) {
+                case '(': 
+                    cStackPush(&bracketStack, infix[i]);
+                    break;
+                case '[': // Only Can't ([
+                    if (*(bracketStack.top-1) == '(') {
+                        return ILLEGAL_INPUT_BRACKET;
+                    } else {
+                        cStackPush(&bracketStack, infix[i]);
+                        break;
+                    }
+                case ')':
+                    cStackPop(&bracketStack, &c);
+                    if (c != '(') {
+                        return ILLEGAL_INPUT_BRACKET;
+                    }
+                    break;
+                case ']':
+                    cStackPop(&bracketStack, &c);
+                    if (c != '[') {
+                        return ILLEGAL_INPUT_BRACKET;
+                    }
+                    break;
+                default:
+                    break;
             }
-            char c;
-            cStackPop(&bracketStack, &c);
-            if (c != '(') {
-                return ILLEGAL_INPUT_BRACKET;
-            }
-        } else if (infix[i] == '[') {
-            if (cStackEmpty(&bracketStack) || *(bracketStack.top-1) != '(') {
-                return ILLEGAL_INPUT_BRACKET;
-            }
-            cStackPush(&bracketStack, '[');
-        } else if (infix[i] == ']') {
-            if (cStackEmpty(&bracketStack)) {
-                return ILLEGAL_INPUT_BRACKET;
-            }
-            char c;
-            cStackPop(&bracketStack, &c);
-            if (c != '[') {
-                return ILLEGAL_INPUT_BRACKET;
-            }
-            if (cStackEmpty(&bracketStack) || *(bracketStack.top-1) != '(') {
-                return ILLEGAL_INPUT_BRACKET;
-            }
+            
         }
-    }
-    if (!cStackEmpty(&bracketStack)) {
-        return ILLEGAL_INPUT_BRACKET;
+        if (!cStackEmpty(&bracketStack)) {
+                return ILLEGAL_INPUT_BRACKET;
+            }
     }
     cStackDestroy(&bracketStack);
-
     // Devide By 0
     // This situation will be handled when calculation the postfix expression
 
@@ -284,9 +286,9 @@ static int negative2zero (char *infix) {
         }
     }
 
-// #if DEBUG   // Debug
+#if DEBUG   // Debug
     printf("The negative2zero infix expression is: %s\n", infix);
-// #endif
+#endif
 
     return OK;
 }
