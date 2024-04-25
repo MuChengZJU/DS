@@ -121,14 +121,6 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
     int j = 0;
     // Iterate over the infix expression, converting it to postfix expression
     for (int i = 0; infix[i] != '='; i++) {
-        // if (infix[i] == '-') {
-        //     // Check Negative Number
-        //     if (i == 0 || infix[i-1] == '(' || infix[i-1] == '[') {
-        //         // Negative Number
-        //         // Directly push to postfix
-        //         postfix[j++] = infix[i++];
-        //     }
-        // }
         if (infix[i] >= '0' && infix[i] <= '9') {
             // Number or .
             // Directly send to postfix
@@ -148,12 +140,6 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
             // Pop the operators until the corresponding left bracket
             // Bracket are examined to be matched in illegalDetect
             char c;
-            // cStackPop(&operatorStack, &c);
-            // while (c != '(' && c != '[') {//TODO: cStackPop(&operatorStack, &c) == 0
-            //     postfix[j++] = c;
-            //     postfix[j++] = ' ';
-            //     cStackPop(&operatorStack, &c); // Pop the ([ but dont send to postfix
-            // }
             while ('(' != *(operatorStack.top-1) && '[' != *(operatorStack.top-1)) {
                 cStackPop(&operatorStack, &c);
                 postfix[j++] = c;
@@ -165,12 +151,6 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
             // Pop until the stack is empty or the top is ( [ (lower priority than * /)
             // Then push
             char c;
-            // while (cStackPop(&operatorStack, &c) == 0 && c != '(' && c != '[') {
-            //     postfix[j++] = c;
-            //     postfix[j++] = ' ';
-            // }
-            // cStackPush(&operatorStack, c);
-            // cStackPush(&operatorStack, infix[i]);
             while ( !cStackEmpty(&operatorStack) && '(' != *(operatorStack.top-1) && '[' != *(operatorStack.top-1) ) {
                 cStackPop(&operatorStack, &c);
                 postfix[j++] = c;
@@ -182,12 +162,6 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
             // Pop until the stack is empty or the top is ( [  + - (lower priority than * /)
             // Then push
             char c;
-            // while (cStackPop(&operatorStack, &c) == 0 && c != '(' && c != '[' && c != '+' && c != '-') {
-            //     postfix[j++] = c;
-            //     postfix[j++] = ' ';
-            // }
-            // cStackPush(&operatorStack, c);
-            // cStackPush(&operatorStack, infix[i]);
             while ( !cStackEmpty(&operatorStack) && '(' != *(operatorStack.top-1) && '[' != *(operatorStack.top-1) && '+' != *(operatorStack.top-1) && '-' != *(operatorStack.top-1) ) {
                 cStackPop(&operatorStack, &c);
                 postfix[j++] = c;
@@ -276,9 +250,7 @@ static int calculatePostfix(char *postfix, double *result) {
     }
 
     // Pop the result
-    // double result;
     dStackPop(&numberStack, result);
-    // sprintf(postfix, "%lf", result);
 
     return OK;
 }
@@ -302,211 +274,3 @@ static int negative2zero (char *infix) {
 
     return OK;
 }
-
-/**
-PS D:\Codefield\DS\DSExercise\build> ."D:/Codefield/DS/DSExercise/build/DSExercise.exe"
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
-
-请输入序号选择你想执行的编程练习: 5
-Please input the infix expression:(end with = and enter)
-1+1=
-The negative2zero infix expression is: 1+1=
-
-The postfix expression is: 1 1 +
-The result is: 2.000000
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
-
-请输入序号选择你想执行的编程练习: 5
-Please input the infix expression:(end with = and enter)
--1+2
-Illegal Characters!
-请按任意键继续. . .
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
-
-请输入序号选择你想执行的编程练习: 5
-Please input the infix expression:(end with = and enter)
--1+2=
-The negative2zero infix expression is: 0-1+2=
-
-The postfix expression is: 0 1 - 2 +
-The result is: 1.000000
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
-
-请输入序号选择你想执行的编程练习: 5
-Please input the infix expression:(end with = and enter)
--[-(5.1+6.2*7.3)+1.3*5]=
-The negative2zero infix expression is: 0-[0-(5.1+6.2*7.3)+1.3*5]=
-
-The postfix expression is: 0 0 5.1 6.2 7.3 * + - 1.3 5 * + -
-The result is: 43.860000
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
-
-请输入序号选择你想执行的编程练习: 5
-Please input the infix expression:(end with = and enter)
-12+36/(-2+2)=
-The negative2zero infix expression is: 12+36/(0-2+2)=
-
-The postfix expression is: 12 36 0 2 - 2 + / +
-Cant devide by 0!
-请按任意键继续. . .
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
-
-请输入序号选择你想执行的编程练习: 5
-Please input the infix expression:(end with = and enter)
-[(2+3)=
-Illegal Brackets!
-请按任意键继续. . .
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
-
-请输入序号选择你想执行的编程练习: 5
-Please input the infix expression:(end with = and enter)
--[-(5.1+6.2*7.3)+1.3]*5=
-The negative2zero infix expression is: 0-[0-(5.1+6.2*7.3)+1.3]*5=
-
-The postfix expression is: 0 0 5.1 6.2 7.3 * + - 1.3 + 5 * -
-The result is: 245.300000
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
-
-请输入序号选择你想执行的编程练习: 5
-Please input the infix expression:(end with = and enter)
-12+36/(-2+2)=
-The negative2zero infix expression is: 12+36/(0-2+2)=
-
-The postfix expression is: 12 36 0 2 - 2 + / +
-Cant devide by 0!
-请按任意键继续. . .
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
-
-请输入序号选择你想执行的编程练习: 5
-Please input the infix expression:(end with = and enter)
-[(2+3)=
-Illegal Brackets!
-请按任意键继续. . .
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
-
-请输入序号选择你想执行的编程练习: 5
-Please input the infix expression:(end with = and enter)
-[(3+4)]=
-The negative2zero infix expression is: [(3+4)]=
-
-The postfix expression is: 3 4 +
-The result is: 7.000000
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
-
-请输入序号选择你想执行的编程练习: 5
-Please input the infix expression:(end with = and enter)
-a+b=
-Illegal Characters!
-请按任意键继续. . .
-===========数据结构与算法分析编程练习集===========
-
---1. 实数四则运算器
---2. 复数四则运算器
---3. 线性表练习
---4. 多项式运算
---5. 栈表达式求值
---0. 退出
-
-=============================================
- 
- * 
- */
