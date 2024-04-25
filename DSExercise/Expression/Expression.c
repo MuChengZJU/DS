@@ -89,15 +89,9 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
     charStack operatorStack;
     cStackInit(&operatorStack);
 
+    int j = 0;
     // Iterate over the infix expression, converting it to postfix expression
-    for (int i = 0, j = 0; infix[i] != '='; i++) {
-
-// #if DEBUG
-    printf("The postfix expression is: %s\n", postfix);
-    printf("The operator stack is: ");
-    cStackPrint(&operatorStack);
-// #endif
-
+    for (int i = 0; infix[i] != '='; i++) {
         if (infix[i] >= '0' && infix[i] <= '9') {
             // Number or .
             // Directly send to postfix
@@ -117,46 +111,73 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
             // Pop the operators until the corresponding left bracket
             // Bracket are examined to be matched in illegalDetect
             char c;
-            cStackPop(&operatorStack, &c);
-            while (c != '(' && c != '[') {//TODO: cStackPop(&operatorStack, &c) == 0
+            // cStackPop(&operatorStack, &c);
+            // while (c != '(' && c != '[') {//TODO: cStackPop(&operatorStack, &c) == 0
+            //     postfix[j++] = c;
+            //     postfix[j++] = ' ';
+            //     cStackPop(&operatorStack, &c); // Pop the ([ but dont send to postfix
+            // }
+            while ('(' != *(operatorStack.top-1) && '[' != *(operatorStack.top-1)) {
+                cStackPop(&operatorStack, &c);
                 postfix[j++] = c;
                 postfix[j++] = ' ';
-                cStackPop(&operatorStack, &c); // Pop the ([ but dont send to postfix
             }
+            cStackPop(&operatorStack, &c); // Pop the ([ but dont send to postfix
         } else if (infix[i] == '+' || infix[i] == '-') {
             // + -
             // Pop until the stack is empty or the top is ( [ (lower priority than * /)
             // Then push
             char c;
-            while (cStackPop(&operatorStack, &c) == 0 && c != '(' && c != '[') {
+            // while (cStackPop(&operatorStack, &c) == 0 && c != '(' && c != '[') {
+            //     postfix[j++] = c;
+            //     postfix[j++] = ' ';
+            // }
+            // cStackPush(&operatorStack, c);
+            // cStackPush(&operatorStack, infix[i]);
+            while ( !cStackEmpty(&operatorStack) && '(' != *(operatorStack.top-1) && '[' != *(operatorStack.top-1) ) {
+                cStackPop(&operatorStack, &c);
                 postfix[j++] = c;
                 postfix[j++] = ' ';
             }
-            cStackPush(&operatorStack, c);
             cStackPush(&operatorStack, infix[i]);
         } else if (infix[i] == '*' || infix[i] == '/') {
             // * /
             // Pop until the stack is empty or the top is ( [  + - (lower priority than * /)
             // Then push
             char c;
-            while (cStackPop(&operatorStack, &c) == 0 && c != '(' && c != '[' && c != '+' && c != '-') {
+            // while (cStackPop(&operatorStack, &c) == 0 && c != '(' && c != '[' && c != '+' && c != '-') {
+            //     postfix[j++] = c;
+            //     postfix[j++] = ' ';
+            // }
+            // cStackPush(&operatorStack, c);
+            // cStackPush(&operatorStack, infix[i]);
+            while ( !cStackEmpty(&operatorStack) && '(' != *(operatorStack.top-1) && '[' != *(operatorStack.top-1) && '+' != *(operatorStack.top-1) && '-' != *(operatorStack.top-1) ) {
+                cStackPop(&operatorStack, &c);
                 postfix[j++] = c;
                 postfix[j++] = ' ';
             }
-            cStackPush(&operatorStack, c);
             cStackPush(&operatorStack, infix[i]);
         }
-
+// #if DEBUG
+    printf("The current char is: infix[%d]=%c\n", i, infix[i]);
+    printf("The postfix expression is: %s\n", postfix);
+    printf("The operator stack is: ");
+    cStackPrint(&operatorStack);
+// #endif
     }
 
     // Pop the remaining operators
     char c;
-    int j = 0;
     while (cStackPop(&operatorStack, &c) == 0) {
         postfix[j++] = c;
         postfix[j++] = ' ';
     }
     postfix[j--] = '\0'; // Let the last char be \0
+
+// #if DEBUG
+    printf("The postfix expression is: %s\n", postfix);
+    cStackPrint(&operatorStack);
+// #endif
 
     return OK;
 }
