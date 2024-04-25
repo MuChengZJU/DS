@@ -3,12 +3,15 @@
 
 CMakeFiles/DSExercise.dir/DSExercise.c.obj
  D:/Codefield/DS/DSExercise/DSExercise.c
+ D:/Codefield/DS/DSExercise/Expression/Expression.h
+ D:/Codefield/DS/DSExercise/Expression/Stack.h
  D:/Codefield/DS/DSExercise/Polynomial/Polynomial.h
 CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.obj
  D:/Codefield/DS/DSExercise/DataStructures/LinkedList.c
  D:/Codefield/DS/DSExercise/DataStructures/LinkedList.h
 CMakeFiles/DSExercise.dir/Expression/Expression.c.obj
  D:/Codefield/DS/DSExercise/Expression/Expression.c
+ D:/Codefield/DS/DSExercise/Expression/Expression.h
  D:/Codefield/DS/DSExercise/Expression/Stack.h
 CMakeFiles/DSExercise.dir/Expression/Stack.c.obj
  D:/Codefield/DS/DSExercise/Expression/Stack.c

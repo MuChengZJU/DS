@@ -10,6 +10,7 @@
 #include "Stack.h"
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int cStackInit(charStack *cStack) {
     cStack->base = (char *)malloc(STACK_INIT_SIZE * sizeof(char));
@@ -25,20 +26,24 @@ int cStackPush(charStack *cStack, char c){
     if (cStack->top - cStack->base >= cStack->stackSize) {
         cStack->base = (char *)realloc(cStack->base, (cStack->stackSize + STACK_INIT_SIZE) * sizeof(char));
         if (!cStack->base) {
+            printf("realloc failed\n");
             return -1;
         }
         cStack->top = cStack->base + cStack->stackSize;
         cStack->stackSize += STACK_INIT_SIZE;
     }
-    *cStack->top++ = c;
+    *cStack->top = c;
+    cStack->top += 1;
     return 0;
 }
 
 int cStackPop(charStack *cStack, char *c) {
     if (cStack->top == cStack->base) {
+        // printf("stack is empty\n");
         return -1;
     }
-    *c = *--cStack->top;
+    cStack->top -= 1;
+    *c = *cStack->top;
     return 0;
 }
 
@@ -48,6 +53,22 @@ int cStackDestroy(charStack *cStack) {
     cStack->top = NULL;
     cStack->stackSize = 0;
     return 0;
+}
+
+int cStackPrint(charStack *cStack) {
+    for (char *p = cStack->base; p < cStack->top; p++) {
+        printf("%c", *p);
+    }
+    printf("\n");
+    return 0;
+}
+
+int cStackEmpty(charStack *cStack) {
+    if (cStack->top == cStack->base) {
+        return 1;
+    }
+    return 0;
+
 }
 
 int dStackInit(doubleStack *dStack) {

@@ -10,46 +10,13 @@
  */
 
 #include "Stack.h"
+#include "Expression.h"
 #include <stdio.h>
 
-#define MAX_INPUT_SIZE 100
+#ifndef DEBUG
+#define DEBUG 0
+#endif
 
-#define OK 0
-#define ILLEGAL_INPUT 1
-#define ILLEGAL_INPUT_CHARACTER 2
-#define ILLEGAL_INPUT_BRACKET 3
-
-/**
- * @brief Convert the infix expression to postfix expression
- * 
- * @param infix (Number: 0-9(Negative allowed), Operator: + - * / ( ) [ ], End: =)
- * @param postfix (Numbers and operators are separated by space ' ')
- * @return int 
- */
-static int convertInfix2Postfix(char *infix, char *postfix);
-
-/**
- * @brief Detect if the infix expression contains illegal characters (beyond numbers and opetaors) or []() dont match
- * 
- * @param infix 
- * @return int 
- */
-static int illegalDetect(char *infix);
-
-/**
- * @brief Calculate a postfix expression
- * 
- * @param postfix 
- * @return int 
- */
-static int calculatePostfix(char *postfix);
-
-
-/**
- * @brief 
- * 
- * @return int 
- */
 int Expression(void) {
     // Input the infix expression
     printf("Please input the infix expression:(end with = and enter)\n");
@@ -63,6 +30,11 @@ int Expression(void) {
         return ILLEGAL_INPUT;
     }
     convertInfix2Postfix(infix, postfix);
+
+#if DEBUG
+    printf("The postfix expression is: %s\n", postfix);
+#endif
+    printf("The postfix expression is: %s\n", postfix);
 
     // Calculate the postfix expression
     calculatePostfix(postfix);
@@ -119,6 +91,13 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
 
     // Iterate over the infix expression, converting it to postfix expression
     for (int i = 0, j = 0; infix[i] != '='; i++) {
+
+// #if DEBUG
+    printf("The postfix expression is: %s\n", postfix);
+    printf("The operator stack is: ");
+    cStackPrint(&operatorStack);
+// #endif
+
         if (infix[i] >= '0' && infix[i] <= '9') {
             // Number or .
             // Directly send to postfix
@@ -132,7 +111,6 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
         } else if (infix[i] == '(' || infix[i] == '[') {
             // Left Bracket
             // Directly push to operator stack
-            // TODO: Priority of [ ]
             cStackPush(&operatorStack, infix[i]);
         } else if (infix[i] == ')' || infix[i] == ']') {
             // Right Bracket
@@ -140,7 +118,7 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
             // Bracket are examined to be matched in illegalDetect
             char c;
             cStackPop(&operatorStack, &c);
-            while (c != '(' || c != '[') {
+            while (c != '(' && c != '[') {//TODO: cStackPop(&operatorStack, &c) == 0
                 postfix[j++] = c;
                 postfix[j++] = ' ';
                 cStackPop(&operatorStack, &c); // Pop the ([ but dont send to postfix
@@ -150,7 +128,7 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
             // Pop until the stack is empty or the top is ( [ (lower priority than * /)
             // Then push
             char c;
-            while (cStackPop(&operatorStack, &c) == 0 || c != '(' || c != '[') {
+            while (cStackPop(&operatorStack, &c) == 0 && c != '(' && c != '[') {
                 postfix[j++] = c;
                 postfix[j++] = ' ';
             }
@@ -161,7 +139,7 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
             // Pop until the stack is empty or the top is ( [  + - (lower priority than * /)
             // Then push
             char c;
-            while (cStackPop(&operatorStack, &c) == 0 || c != '(' || c != '[' || c != '+' || c != '-') {
+            while (cStackPop(&operatorStack, &c) == 0 && c != '(' && c != '[' && c != '+' && c != '-') {
                 postfix[j++] = c;
                 postfix[j++] = ' ';
             }
@@ -169,13 +147,6 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
             cStackPush(&operatorStack, infix[i]);
         }
 
-        // Iteration over, then check if the stack remain operators
-        char c;
-        while (cStackPop(&operatorStack, &c) == 0) {
-            postfix[j++] = c;
-            postfix[j++] = ' ';
-        }
-        postfix[j--] = '\0'; // Let the last char be \0
     }
 
     // Pop the remaining operators
@@ -185,7 +156,7 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
         postfix[j++] = c;
         postfix[j++] = ' ';
     }
-    postfix[j] = '\0';
+    postfix[j--] = '\0'; // Let the last char be \0
 
     return OK;
 }
@@ -199,6 +170,58 @@ static int calculatePostfix(char *postfix) {
     for (int i = 0; postfix[i] != '\0'; i++) {
         if (postfix[i] >= '0' && postfix[i] <= '9') {
             // Number
+            // Directly push to number stack
+            double d = 0;
+            while (postfix[i] >= '0' && postfix[i] <= '9') {
+                d = d * 10 + postfix[i] - '0';
+                i++;
+            }
+            if (postfix[i] == '.') {
+                i++;
+                double decimal = 0.1;
+                while (postfix[i] >= '0' && postfix[i] <= '9') {
+                    d += (postfix[i] - '0') * decimal;
+                    decimal /= 10;
+                    i++;
+                }
+            }
+            dStackPush(&numberStack, d);
+        } else if (postfix[i] == ' ') {
+            // Space
+            // Skip
+        } else {
+            // Operator
+            // Pop two numbers and calculate
+            double d1, d2;
+            dStackPop(&numberStack, &d1);
+            dStackPop(&numberStack, &d2);
+            switch (postfix[i]) {
+            case '+':
+                dStackPush(&numberStack, d2 + d1);
+                break;
+            case '-':
+                dStackPush(&numberStack, d2 - d1);
+                break;
+            case '*':
+                dStackPush(&numberStack, d2 * d1);
+                break;
+            case '/':
+                if (d1 == 0) {
+                    printf("Divide by 0!\n");
+                    return ILLEGAL_INPUT;
+                }
+                dStackPush(&numberStack, d2 / d1);
+                break;
+            default:
+                break;
+            }
         }
     }
+
+    // Pop the result
+    double result;
+    dStackPop(&numberStack, &result);
+    sprintf(postfix, "%lf", result);
+
+    return OK;
 }

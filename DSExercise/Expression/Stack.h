@@ -67,6 +67,10 @@ int cStackPop(charStack *cStack, char *c);
  */
 int cStackDestroy(charStack *cStack);
 
+int cStackPrint(charStack *cStack);
+
+int cStackEmpty(charStack *cStack);
+
 
 /**
  * @brief Init doubleStack

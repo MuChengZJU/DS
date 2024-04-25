@@ -1,13 +1,13 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "Polynomial/Polynomial.h"
+#include "Expression/Expression.h"
 
 #define MAX_BUFF_SIZE (256)
 
 void PrintMenu();
 int MathComplex();
 int polynomialCalcutation();
-int lab3();
 
 int main(int argc, char* argv[]) 
 {
@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
             break;
 
         case '5':
-            lab3();
+            Expression();
             break;
         
         default:

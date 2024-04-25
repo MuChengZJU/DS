@@ -6,13 +6,17 @@
 
 #IncludeRegexTransform: 
 
-D:/Codefield/DS/DSExercise/Expression/Stack.c
+D:/Codefield/DS/DSExercise/Expression/Expression.c
 Stack.h
 D:/Codefield/DS/DSExercise/Expression/Stack.h
-stddef.h
+Expression.h
+D:/Codefield/DS/DSExercise/Expression/Expression.h
+stdio.h
 -
-stdlib.h
--
+
+D:/Codefield/DS/DSExercise/Expression/Expression.h
+Stack.h
+D:/Codefield/DS/DSExercise/Expression/Stack.h
 
 D:/Codefield/DS/DSExercise/Expression/Stack.h
 
