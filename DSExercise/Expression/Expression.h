@@ -13,13 +13,6 @@
 
 #include "Stack.h"
 
-#define MAX_INPUT_SIZE 100
-
-#define OK 0
-#define ILLEGAL_INPUT 1
-#define ILLEGAL_INPUT_CHARACTER 2
-#define ILLEGAL_INPUT_BRACKET 3
-
 /**
  * @brief Convert the infix expression to postfix expression
  * 
@@ -43,7 +36,7 @@ static int illegalDetect(char *infix);
  * @param postfix 
  * @return int 
  */
-static int calculatePostfix(char *postfix);
+static int calculatePostfix(char *postfix, double *result);
 
 
 /**

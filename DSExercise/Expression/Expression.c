@@ -13,6 +13,13 @@
 #include "Expression.h"
 #include <stdio.h>
 
+#define MAX_INPUT_SIZE 100
+
+#define OK 0
+#define ILLEGAL_INPUT_CHARACTER 2
+#define ILLEGAL_INPUT_BRACKET 3
+#define ILLEGAL_ZERO 4
+
 #ifndef DEBUG
 #define DEBUG 0
 #endif
@@ -25,19 +32,32 @@ int Expression(void) {
     fgets(infix, MAX_INPUT_SIZE, stdin);
 
     // Convert the infix expression to postfix expression
-    if (illegalDetect(infix)) {
-        printf("Illegal input!\n");
-        return ILLEGAL_INPUT;
+    int illegalCode = illegalDetect(infix);
+    if (illegalCode != OK) {
+        switch (illegalCode) {
+        case ILLEGAL_INPUT_BRACKET:
+            printf("Illegal Brackets!\n");
+            break;
+        case ILLEGAL_INPUT_CHARACTER:
+            printf("Illegal Characters!\n");
+            break;
+        default:
+            break;
+        }
+        return illegalCode;
     }
     convertInfix2Postfix(infix, postfix);
 
 #if DEBUG
     printf("The postfix expression is: %s\n", postfix);
 #endif
-    printf("The postfix expression is: %s\n", postfix);
 
     // Calculate the postfix expression
-    calculatePostfix(postfix);
+    double result;
+    if (calculatePostfix(postfix, &result) != OK) {
+        printf("Cant devide by 0!\n");
+        return ILLEGAL_ZERO;
+    }
 
     // Output the result
     printf("The result is: %s\n", postfix);
@@ -77,6 +97,10 @@ static int illegalDetect (char *infix) {
             }
         }
     }
+    if (!cStackEmpty(&bracketStack)) {
+        return ILLEGAL_INPUT_BRACKET;
+    }
+    cStackDestroy(&bracketStack);
 
     // Devide By 0
     // This situation will be handled when calculation the postfix expression
@@ -158,12 +182,12 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
             }
             cStackPush(&operatorStack, infix[i]);
         }
-// #if DEBUG
+#if DEBUG
     printf("The current char is: infix[%d]=%c\n", i, infix[i]);
     printf("The postfix expression is: %s\n", postfix);
     printf("The operator stack is: ");
     cStackPrint(&operatorStack);
-// #endif
+#endif
     }
 
     // Pop the remaining operators
@@ -174,15 +198,15 @@ static int convertInfix2Postfix(char *infix, char *postfix) {
     }
     postfix[j--] = '\0'; // Let the last char be \0
 
-// #if DEBUG
+#if DEBUG
     printf("The postfix expression is: %s\n", postfix);
     cStackPrint(&operatorStack);
-// #endif
+#endif
 
     return OK;
 }
 
-static int calculatePostfix(char *postfix) {
+static int calculatePostfix(char *postfix, double *result) {
     // Init the number stack
     doubleStack numberStack;
     dStackInit(&numberStack);
@@ -228,8 +252,7 @@ static int calculatePostfix(char *postfix) {
                 break;
             case '/':
                 if (d1 == 0) {
-                    printf("Divide by 0!\n");
-                    return ILLEGAL_INPUT;
+                    return ILLEGAL_ZERO;
                 }
                 dStackPush(&numberStack, d2 / d1);
                 break;
@@ -240,7 +263,7 @@ static int calculatePostfix(char *postfix) {
     }
 
     // Pop the result
-    double result;
+    // double result;
     dStackPop(&numberStack, &result);
     sprintf(postfix, "%lf", result);
 

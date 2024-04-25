@@ -40,7 +40,9 @@ int main(int argc, char* argv[])
             break;
 
         case '5':
-            Expression();
+            if (Expression() != 0) {
+                system("pause");
+            }
             break;
         
         default:
