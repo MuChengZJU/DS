@@ -55,7 +55,8 @@ void Replace(String* S, String T, String V) {
         }
     }
 
-    free(S->str);
+    // free(S->str);
+    new_str[new_length] = '\0';
     S->str = new_str;
     S->length = new_length;
 }
