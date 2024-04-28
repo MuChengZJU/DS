@@ -22,6 +22,16 @@ typedef struct {
 } String;
 
 /**
+ * @brief Node for string
+ * @brief header node: chdata is "h", succ points to the first node
+ */
+typedef struct Node {
+    char chdata;
+    struct Node* succ;
+    struct Node* next;
+} Node;
+
+/**
  * @brief Replace substring T in S with V. 
  * For example, Replace("Hello, world!", "world", "C language") will return "Hello, C language!"
  * 
@@ -61,7 +71,28 @@ void Replace(String* S, String T, String V) {
     S->length = new_length;
 }
 
+/**
+ * @brief Get next pointer for KMP algorithm
+ * 
+ * @param pattern Pointer to head node of pattern string
+ */
+void getNext(Node *pattern) {
+    Node *currNode = pattern->succ; // Jump off the head node TODO: from 1st or 2nd node
+    Node *succNode = currNode->succ;
+    currNode->next = currNode; // First node's next is itself
+    Node* nextPtr = currNode->next;
+    while (currNode->chdata != '\n') {
+        if (currNode->chdata == nextPtr->chdata || nextPtr == pattern) {
+            currNode->succ->next = nextPtr->succ;
+            currNode = succNode; // Move to next node
+        } else {
+            nextPtr = nextPtr->next; // Recursive
+        }
+    }
+}
+
 int main() {
+    // 4.17 Replace(&S, T, V).
     String S, T, V;
     S.str = "Hello, world! Good morning, world!";
     S.length = strlen(S.str);
@@ -71,8 +102,37 @@ int main() {
     V.length = strlen(V.str);
 
     Replace(&S, T, V);
+    
     printf("New String: %s\n", S.str);
 
-    free(S.str);
+    // free(S.str); // No need to free S.str, because it is not malloced in this demo
+
+    // 4.28
+    // Creat pattern string
+    Node *pattern = (Node *)malloc(sizeof(Node));
+    Node *p = pattern;
+    // head node
+    p->chdata = 'h';
+    p->succ = (Node *)malloc(sizeof(Node));
+    p = p->succ;
+    p->next = NULL;
+    // input pattern string
+    printf("Input pattern string: ");
+    char ch;
+    while ((ch = getchar()) != '\n') {
+        p->chdata = ch;
+        p->succ = (Node *)malloc(sizeof(Node));
+        p = p->succ;
+        p->next = NULL;
+    }
+    // end of pattern string
+    p->chdata = '\n';
+    p->succ = NULL;
+
+    // getNext
+    getNext(pattern);
+
+    free(pattern);
+
     return 0;
 }
