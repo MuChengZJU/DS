@@ -109,6 +109,7 @@ void getNext(Node *pattern)
 int main()
 {
     // 4.17 Replace(&S, T, V).
+    // For slack, just use the example in the question
     String S, T, V;
     S.str = "Hello, world! Good morning, world!";
     S.length = strlen(S.str);
