@@ -29,7 +29,9 @@
 			"array": "c",
 			"stack.h": "c",
 			"cctype": "c",
-			"string.h": "c"
+			"string.h": "c",
+			"stdbool.h": "c",
+			"sstream": "c"
 		}
 	}
 }

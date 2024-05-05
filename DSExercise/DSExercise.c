@@ -2,6 +2,7 @@
 #include "stdlib.h"
 #include "Polynomial/Polynomial.h"
 #include "Expression/Expression.h"
+#include "DynamicString/DynamicString.h"
 
 #define MAX_BUFF_SIZE (256)
 
@@ -44,6 +45,10 @@ int main(int argc, char* argv[])
                 system("pause");
             }
             break;
+
+        case '6':
+            labDynamicString();
+            break;
         
         default:
             printf("\n请输入有效的序号！\n\n");
@@ -64,6 +69,7 @@ void PrintMenu()
     printf("--3. 线性表练习\n");
     printf("--4. 多项式运算\n");
     printf("--5. 栈表达式求值\n");
+    printf("--6. 动态字符串\n");
     printf("--0. 退出\n\n");
 	printf("=============================================\n\n");
     printf("请输入序号选择你想执行的编程练习: ");

@@ -18,4 +18,6 @@
  */
 int labDynamicString(void);
 
+int extractReplaceString(char *replaceString, char **substring);
+
 #endif // _STRING_H_
