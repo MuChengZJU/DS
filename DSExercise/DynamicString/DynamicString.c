@@ -64,11 +64,29 @@ int extractReplaceString(char *replaceString, char **substrings) {
 
         strcpy(substrings[count], token);
 
-        // Remove double quotes if they exist
-        // if (token[0] == '"') {
-        //     memmove(token, token + 1, strlen(token) - 1);
-        //     substrings[count][strlen(substrings[count]) - 1] = '\0';
-        // }
+        //Remove double quotes if they exist
+        if (token[0] == '"') {
+            // 计算不包含双引号的字符串长度
+            size_t new_len = strlen(token) - 2;
+            
+            // 为新的字符串分配内存
+            substrings[count] = (char *)malloc(new_len + 1);
+            if (substrings[count] == NULL) {
+                perror("malloc failed");
+                exit(EXIT_FAILURE);
+            }
+
+            // 复制不包含双引号的字符串
+            strncpy(substrings[count], token + 1, new_len);
+            substrings[count][new_len] = '\0'; // 确保字符串以空字符结尾
+        } else {
+            // 如果 token 不以双引号开始，直接复制整个 token
+            substrings[count] = strdup(token);
+            if (substrings[count] == NULL) {
+                perror("strdup failed");
+                exit(EXIT_FAILURE);
+            }
+        }
         count++;
         token = strtok(NULL, ",");
     }
