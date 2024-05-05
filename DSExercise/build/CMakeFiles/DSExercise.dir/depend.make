@@ -24,3 +24,5 @@ CMakeFiles/DSExercise.dir/Polynomial/Lab2.c.obj: ../Polynomial/Polynomial.h
 CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.obj: ../Polynomial/Polynomial.c
 CMakeFiles/DSExercise.dir/Polynomial/Polynomial.c.obj: ../Polynomial/Polynomial.h
 
+CMakeFiles/DSExercise.dir/String/String.c.obj: ../String/String.c
+

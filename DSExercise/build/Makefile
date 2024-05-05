@@ -586,6 +586,33 @@ DataStructures/LinkedList.c.s:
 	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/DataStructures/LinkedList.c.s
 .PHONY : DataStructures/LinkedList.c.s
 
+DynamicString/DynamicString.obj: DynamicString/DynamicString.c.obj
+
+.PHONY : DynamicString/DynamicString.obj
+
+# target to build an object file
+DynamicString/DynamicString.c.obj:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/DynamicString/DynamicString.c.obj
+.PHONY : DynamicString/DynamicString.c.obj
+
+DynamicString/DynamicString.i: DynamicString/DynamicString.c.i
+
+.PHONY : DynamicString/DynamicString.i
+
+# target to preprocess a source file
+DynamicString/DynamicString.c.i:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/DynamicString/DynamicString.c.i
+.PHONY : DynamicString/DynamicString.c.i
+
+DynamicString/DynamicString.s: DynamicString/DynamicString.c.s
+
+.PHONY : DynamicString/DynamicString.s
+
+# target to generate assembly for a file
+DynamicString/DynamicString.c.s:
+	$(MAKE) -f CMakeFiles\DSExercise.dir\build.make CMakeFiles/DSExercise.dir/DynamicString/DynamicString.c.s
+.PHONY : DynamicString/DynamicString.c.s
+
 Expression/Expression.obj: Expression/Expression.c.obj
 
 .PHONY : Expression/Expression.obj
@@ -795,6 +822,9 @@ help:
 	@echo ... DataStructures/LinkedList.obj
 	@echo ... DataStructures/LinkedList.i
 	@echo ... DataStructures/LinkedList.s
+	@echo ... DynamicString/DynamicString.obj
+	@echo ... DynamicString/DynamicString.i
+	@echo ... DynamicString/DynamicString.s
 	@echo ... Expression/Expression.obj
 	@echo ... Expression/Expression.i
 	@echo ... Expression/Expression.s

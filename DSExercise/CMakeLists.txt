@@ -18,6 +18,8 @@ add_executable(DSExercise
     Expression/Expression.h
     Expression/Stack.c
     Expression/Stack.h
+    DynamicString/DynamicString.c
+    DynamicString/DynamicString.h
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
