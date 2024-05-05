@@ -25,19 +25,21 @@ int labDynamicString(void)
     int numSubstrings = 0;
     // User input
     printf("Please input a string with {}: \n");
-    scanf("%s", inputString);
+    fgets(inputString, sizeof(inputString), stdin);
     printf("Please input substring to replace with: \n");
-    scanf("%s", replaceString);
+    fgets(replaceString, sizeof(replaceString), stdin);
 
     // Get the substrings and its number
     numSubstrings = extractReplaceString(replaceString, substrings);    
 
-    // Print the substrings
-    for (int i = 0; i < numSubstrings; i++) {
-        printf("substring[%d] = %s\n", i, substrings[i]);
-        free(substrings[i]);;
-    }
+    // // Print the substrings
+    // for (int i = 0; i < numSubstrings; i++) {
+    //     printf("substring[%d] = %s\n", i, substrings[i]);
+    //     free(substrings[i]);;
+    // }
 
+    char* output_str = format_string(inputString, substrings);
+    printf("Output string: %s\n", output_str);
 
     return 0;
 }
@@ -92,4 +94,24 @@ int extractReplaceString(char *replaceString, char **substrings) {
     }
     free(copyReplaceString);
     return count;
+}
+
+char* format_string(char* format_str, char* substring[]) {
+    char* output_str = (char*)malloc(strlen(format_str) + 1);
+    int i, j, index;
+    char temp_str[100];
+
+    strcpy(output_str, "");
+    for (i = 0; format_str[i] != '\0'; i++) {
+        if (format_str[i] == '{') {
+            i++;
+            index = format_str[i] - '0';
+            sprintf(temp_str, "%s", substring[index]);
+            strcat(output_str, temp_str);
+        } else {
+            strncat(output_str, &format_str[i], 1);
+        }
+    }
+
+    return output_str;
 }
