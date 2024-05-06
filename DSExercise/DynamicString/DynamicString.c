@@ -16,6 +16,7 @@
 
 #define MAX_INPUT_STRING 1000
 #define MAX_SUBSTRING 999
+char* gSplitString = ",";
 
 int labDynamicString(void)
 {
@@ -28,6 +29,9 @@ int labDynamicString(void)
     fgets(inputString, sizeof(inputString), stdin);
     printf("Please input substring to replace with: \n");
     fgets(replaceString, sizeof(replaceString), stdin);
+    if (replaceString[strlen(replaceString) - 1] == '\n') {
+        replaceString[strlen(replaceString) - 1] = '\0';
+    }// Remove the newline character
 
     // Get the substrings and its number
     numSubstrings = extractReplaceString(replaceString, substrings);    
@@ -54,7 +58,7 @@ int extractReplaceString(char *replaceString, char **substrings) {
     strcpy(copyReplaceString, replaceString); // Copy the replaceString to copyReplaceString
     
     // Split the replaceString by ","
-    token = strtok(copyReplaceString, ",");
+    token = strtok(copyReplaceString, gSplitString);
     while (token != NULL) {
         // Allocate memory for each substring
         substrings[count] = malloc(strlen(token) + 1);
@@ -89,7 +93,7 @@ int extractReplaceString(char *replaceString, char **substrings) {
             }
         }
         count++;
-        token = strtok(NULL, ",");
+        token = strtok(NULL, gSplitString);
     }
     free(copyReplaceString);
     return count;
@@ -116,7 +120,7 @@ char* format_string(char* format_str, char* substring[], int numSubstrings) {
                 indexStr[j] = format_str[i];
             }
             rightBrace = i;
-            index = atoi(indexStr);
+            index = atoi(indexStr); //TODO:超越范围、无数字提示
 
             sprintf(temp_str, "%s", substring[index]);
             strcat(output_str, temp_str);
