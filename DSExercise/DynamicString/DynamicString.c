@@ -105,17 +105,13 @@ char* format_string(char* format_str, char* substring[]) {
     for (i = 0; format_str[i] != '\0'; i++) {
         if (format_str[i] == '{') {
             i++;
-            if (format_str[i] == '}') {
-                strncat(output_str, "}", 1);
-            } else {
-                index = format_str[i] - '0';
-                sprintf(temp_str, "%s", substring[index]);
-                strcat(output_str, temp_str);
-            }
+            index = format_str[i] - '0';
+            sprintf(temp_str, "%s", substring[index]);
+            strcat(output_str, temp_str);
         } else {
             strncat(output_str, &format_str[i], 1);
         }
     }
-
+TODO:
     return output_str;
 }
