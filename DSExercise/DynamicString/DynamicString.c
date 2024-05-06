@@ -32,13 +32,12 @@ int labDynamicString(void)
     // Get the substrings and its number
     numSubstrings = extractReplaceString(replaceString, substrings);    
 
-    // // Print the substrings
-    // for (int i = 0; i < numSubstrings; i++) {
-    //     printf("substring[%d] = %s\n", i, substrings[i]);
-    //     free(substrings[i]);;
-    // }
+    // Print the substrings
+    for (int i = 0; i < numSubstrings; i++) {
+        printf("substring[%d] = %s\n", i, substrings[i]);
+    }
 
-    char* output_str = format_string(inputString, substrings);
+    char* output_str = format_string(inputString, substrings, numSubstrings);
     printf("Output string: %s\n", output_str);
 
     return 0;
@@ -96,22 +95,34 @@ int extractReplaceString(char *replaceString, char **substrings) {
     return count;
 }
 
-char* format_string(char* format_str, char* substring[]) {
-    char* output_str = (char*)malloc(strlen(format_str) + 1);
+char* format_string(char* format_str, char* substring[], int numSubstrings) {
+    // Calculate the length of the output string
+    int substringsLength = 0;
+    for (int i = 0; i < numSubstrings; i++) {
+        substringsLength += strlen(substring[i]);
+    }
+    char* output_str = (char*)malloc(strlen(format_str) + substringsLength + 1);
     int i, j, index;
     char temp_str[100];
 
-    strcpy(output_str, "");
+    strcpy(output_str, ""); // Clear the output string
     for (i = 0; format_str[i] != '\0'; i++) {
         if (format_str[i] == '{') {
+            int leftBrace = i;
+            int rightBrace = 0;
+            char indexStr[3]; // Max index is 999
             i++;
-            index = format_str[i] - '0';
+            for (j = 0; format_str[i] != '}'; i++, j++) {
+                indexStr[j] = format_str[i];
+            }
+            rightBrace = i;
+            index = atoi(indexStr);
+
             sprintf(temp_str, "%s", substring[index]);
             strcat(output_str, temp_str);
         } else {
             strncat(output_str, &format_str[i], 1);
         }
     }
-TODO:
     return output_str;
 }
