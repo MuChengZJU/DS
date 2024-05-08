@@ -20,6 +20,6 @@ int labDynamicString(void);
 
 int extractReplaceString(char *replaceString, char **substring);
 
-char* format_string(char* format_str, char* substring[], int numSubstrings);
+char* formatString(char* format_str, char* substring[], int numSubstrings);
 
 #endif // _STRING_H_

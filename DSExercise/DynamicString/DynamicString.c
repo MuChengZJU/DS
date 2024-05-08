@@ -42,8 +42,8 @@ int labDynamicString(void)
     //     printf("substring[%d] = %s\n", i, substrings[i]);
     // }
 
-    char* output_str = format_string(inputString, substrings, numSubstrings);
-    printf("Output string: %s\n", output_str);
+    char* outputString = formatString(inputString, substrings, numSubstrings);
+    printf("Output string: %s\n", outputString);
 
     return 0;
 }
@@ -72,21 +72,21 @@ int extractReplaceString(char *replaceString, char **substrings) {
 
         //Remove double quotes if they exist
         if (token[0] == '"') {
-            // 计算不包含双引号的字符串长度
+            // Calculate the length of the new string
             size_t new_len = strlen(token) - 2;
             
-            // 为新的字符串分配内存
+            // Allocate memory for the new string
             substrings[count] = (char *)malloc(new_len + 1);
             if (substrings[count] == NULL) {
                 perror("malloc failed");
                 exit(EXIT_FAILURE);
             }
 
-            // 复制不包含双引号的字符串
+            // Copy the substring without the double quotes
             strncpy(substrings[count], token + 1, new_len);
-            substrings[count][new_len] = '\0'; // 确保字符串以空字符结尾
+            substrings[count][new_len] = '\0'; // End the string with '\0'
         } else {
-            // 如果 token 不以双引号开始，直接复制整个 token
+            // If there are no double quotes, just copy the token
             substrings[count] = strdup(token);
             if (substrings[count] == NULL) {
                 perror("strdup failed");
@@ -100,28 +100,28 @@ int extractReplaceString(char *replaceString, char **substrings) {
     return count;
 }
 
-char* format_string(char* format_str, char* substring[], int numSubstrings) {
+char* formatString(char* formatString, char* substring[], int numSubstrings) {
     // Calculate the length of the output string
     int substringsLength = 0;
     for (int i = 0; i < numSubstrings; i++) {
         substringsLength += strlen(substring[i]);
     }
-    char* output_str = (char*)malloc(strlen(format_str) + substringsLength + 1);
+    char* outputString = (char*)malloc(strlen(formatString) + substringsLength + 1);
     int i, j, index;
-    char temp_str[100];
+    char tempString[100];
 
-    strcpy(output_str, ""); // Clear the output string
-    for (i = 0; format_str[i] != '\0'; i++) {
-        if (format_str[i] == '{') {
+    strcpy(outputString, ""); // Clear the output string
+    for (i = 0; formatString[i] != '\0'; i++) {
+        if (formatString[i] == '{') {
             int leftBrace = i;
             int rightBrace = 0;
-            char indexStr[3]; // Max index is 999
+            char indexString[3]; // Max index is 999
             i++;
-            for (j = 0; format_str[i] != '}'; i++, j++) {
-                indexStr[j] = format_str[i];
+            for (j = 0; formatString[i] != '}'; i++, j++) {
+                indexString[j] = formatString[i];
             }
             rightBrace = i;
-            index = atoi(indexStr);
+            index = atoi(indexString);
 
             // Check if the index is valid
             if (index < 0 || index >= numSubstrings) {
@@ -129,11 +129,11 @@ char* format_string(char* format_str, char* substring[], int numSubstrings) {
                 return NULL;
             }
 
-            sprintf(temp_str, "%s", substring[index]);
-            strcat(output_str, temp_str);
+            sprintf(tempString, "%s", substring[index]);
+            strcat(outputString, tempString);
         } else {
-            strncat(output_str, &format_str[i], 1);
+            strncat(outputString, &formatString[i], 1);
         }
     }
-    return output_str;
+    return outputString;
 }
