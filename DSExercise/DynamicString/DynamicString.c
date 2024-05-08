@@ -12,6 +12,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "DynamicString.h"
 
 #define MAX_INPUT_STRING 1000
@@ -36,10 +37,10 @@ int labDynamicString(void)
     // Get the substrings and its number
     numSubstrings = extractReplaceString(replaceString, substrings);    
 
-    // Print the substrings
-    for (int i = 0; i < numSubstrings; i++) {
-        printf("substring[%d] = %s\n", i, substrings[i]);
-    }
+    // // Print the substrings
+    // for (int i = 0; i < numSubstrings; i++) {
+    //     printf("substring[%d] = %s\n", i, substrings[i]);
+    // }
 
     char* output_str = format_string(inputString, substrings, numSubstrings);
     printf("Output string: %s\n", output_str);
@@ -120,7 +121,13 @@ char* format_string(char* format_str, char* substring[], int numSubstrings) {
                 indexStr[j] = format_str[i];
             }
             rightBrace = i;
-            index = atoi(indexStr); //TODO:超越范围、无数字提示
+            index = atoi(indexStr);
+
+            // Check if the index is valid
+            if (index < 0 || index >= numSubstrings) {
+                printf("Invalid index %d\n", index);
+                return NULL;
+            }
 
             sprintf(temp_str, "%s", substring[index]);
             strcat(output_str, temp_str);
