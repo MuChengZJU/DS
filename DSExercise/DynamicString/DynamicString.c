@@ -43,9 +43,14 @@ int labDynamicString(void)
     // }
 
     char* outputString = formatString(inputString, substrings, numSubstrings);
-    printf("Output string: %s\n", outputString);
-
-    return 0;
+    
+    if (outputString == NULL) {
+        printf("Please check index.\n");
+        return -1;
+    } else {
+        printf("Output string: %s\n", outputString);
+        return 0;
+    }
 }
 
 int extractReplaceString(char *replaceString, char **substrings) {
@@ -70,29 +75,29 @@ int extractReplaceString(char *replaceString, char **substrings) {
 
         strcpy(substrings[count], token);
 
-        //Remove double quotes if they exist
-        if (token[0] == '"') {
-            // Calculate the length of the new string
-            size_t new_len = strlen(token) - 2;
+        // //Remove double quotes if they exist
+        // if (token[0] == '"') {
+        //     // Calculate the length of the new string
+        //     size_t new_len = strlen(token) - 2;
             
-            // Allocate memory for the new string
-            substrings[count] = (char *)malloc(new_len + 1);
-            if (substrings[count] == NULL) {
-                perror("malloc failed");
-                exit(EXIT_FAILURE);
-            }
+        //     // Allocate memory for the new string
+        //     substrings[count] = (char *)malloc(new_len + 1);
+        //     if (substrings[count] == NULL) {
+        //         perror("malloc failed");
+        //         exit(EXIT_FAILURE);
+        //     }
 
-            // Copy the substring without the double quotes
-            strncpy(substrings[count], token + 1, new_len);
-            substrings[count][new_len] = '\0'; // End the string with '\0'
-        } else {
-            // If there are no double quotes, just copy the token
-            substrings[count] = strdup(token);
-            if (substrings[count] == NULL) {
-                perror("strdup failed");
-                exit(EXIT_FAILURE);
-            }
-        }
+        //     // Copy the substring without the double quotes
+        //     strncpy(substrings[count], token + 1, new_len);
+        //     substrings[count][new_len] = '\0'; // End the string with '\0'
+        // } else {
+        //     // If there are no double quotes, just copy the token
+        //     substrings[count] = strdup(token);
+        //     if (substrings[count] == NULL) {
+        //         perror("strdup failed");
+        //         exit(EXIT_FAILURE);
+        //     }
+        // }
         count++;
         token = strtok(NULL, gSplitString);
     }
