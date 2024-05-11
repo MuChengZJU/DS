@@ -8,4 +8,15 @@
  * 
  */
 
+#ifndef MATRIX_H
+#define MATRIX_H
 
+#define MAX_MATRIX_SIZE 100
+
+typedef struct {
+    int row;    // Row number
+    int col;    // Column number
+    double data;  // Data
+} MatrixElement; 
+
+#endif // MATRIX_H
