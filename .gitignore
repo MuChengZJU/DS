@@ -1,6 +1,8 @@
 build/
 .vscode/
 .git/
-HW1/build
-HW2/build
 DSExercise/build
+HW/HW1/build
+HW/HW2/build
+HW/HW3/build
+HW/HW4/build
