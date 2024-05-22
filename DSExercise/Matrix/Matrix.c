@@ -129,6 +129,26 @@ int labMatrix() {
         returnValue = OK;
     } else if (choice == 4) {
         // Transpose
+        // Input matrix
+        int row, col, size;
+        Matrix *matrix = (Matrix *)malloc(sizeof(Matrix));
+        printf("Enter the row, column and non-zero count of matrix: \n");
+        scanf("%d %d %d", &row, &col, &size);
+        if (row <= 0 || col <= 0 || size < 0 || size > row * col) {
+            printf("Invalid input\n");
+            exit(1);
+        }
+        printf("Enter the elements of matrix (i, j, value)(i, j starts from 0): \n");
+        inputMatrix(matrix, row, col, size);
+        sortMatrix(matrix);
+        printf("Matrix: \n");
+        // Transpose the matrix
+        Matrix *result = (Matrix *)malloc(sizeof(Matrix));
+        transposeMatrix(matrix, result);
+        sortMatrix(result);
+        printf("Result: \n");
+        printMatrix(result);
+
         returnValue = OK;
     } else {
         printf("Invalid input\n");
@@ -148,7 +168,8 @@ void inputMatrix(Matrix *matrix, int row, int col, int size) {
         exit(1);
     }
     for (int i = 0; i < size; i++) {
-        int iTemp, jTemp, valueTemp;
+        int iTemp, jTemp;
+        double valueTemp;
         scanf("%d %d %lf", &iTemp, &jTemp, &valueTemp);
         if (iTemp >= row || jTemp >= col || iTemp < 0 || jTemp < 0) {
             printf("Invalid input\n");
@@ -207,5 +228,23 @@ void addMatrix(Matrix *matrix1, Matrix *matrix2, Matrix *result) {
             j++;
         }
         result->size++;
+    }
+}
+
+void transposeMatrix(Matrix *matrix, Matrix *result) {
+    // Initialize the result matrix
+    result->row = matrix->col;
+    result->col = matrix->row;
+    result->size = matrix->size;
+    result->data = (Element *)malloc(sizeof(Element) * matrix->size);
+    if (result->data == NULL) {
+        printf("Memory allocation failed\n");
+        exit(1);
+    }
+    // Transpose the matrix
+    for (int i = 0; i < matrix->size; i++) {
+        result->data[i].row = matrix->data[i].col;
+        result->data[i].col = matrix->data[i].row;
+        result->data[i].data = matrix->data[i].data;
     }
 }

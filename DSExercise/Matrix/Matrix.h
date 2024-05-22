@@ -37,4 +37,6 @@ void printMatrix(Matrix *matrix);
 
 void addMatrix(Matrix *matrix1, Matrix *matrix2, Matrix *result);
 
+void transposeMatrix(Matrix *matrix, Matrix *result);
+
 #endif // MATRIX_H
