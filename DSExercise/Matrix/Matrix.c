@@ -40,8 +40,12 @@ int labMatrix() {
         Matrix *matrix1 = (Matrix *)malloc(sizeof(Matrix));
         printf("Enter the row, column and non-zero count of matrix 1: \n");
         scanf("%d %d %d", &row1, &col1, &size1);
-        printf("Enter the elements of matrix 1 (i, j, value): \n");
-        initMatrix(matrix1, row1, col1, size1);
+        if (row1 <= 0 || col1 <= 0 || size1 <= 0 || size1 > row1 * col1) {
+            printf("Invalid input\n");
+            exit(1);
+        }
+        printf("Enter the elements of matrix 1 (i, j, value)(i, j starts from 0): \n");
+        inputMatrix(matrix1, row1, col1, size1);
         sortMatrix(matrix1);
         printf("Matrix 1: \n");
         printMatrix(matrix1);
@@ -50,8 +54,12 @@ int labMatrix() {
         Matrix *matrix2 = (Matrix *)malloc(sizeof(Matrix));
         printf("Enter the row, column and non-zero count of matrix 2: \n");
         scanf("%d %d %d", &row2, &col2, &size2);
-        printf("Enter the elements of matrix 2 (i, j, value): \n");
-        initMatrix(matrix2, row2, col2, size2);
+        if (row1 <= 0 || col1 <= 0 || size1 <= 0 || size1 > row1 * col1) {
+            printf("Invalid input\n");
+            exit(1);
+        }
+        printf("Enter the elements of matrix 2 (i, j, value)(i, j starts from 0): \n");
+        inputMatrix(matrix2, row2, col2, size2);
         sortMatrix(matrix2);
         printf("Matrix 2: \n");
         printMatrix(matrix2);
@@ -71,7 +79,51 @@ int labMatrix() {
         }
     } else if (choice == 2) {
         // Subtraction
-        returnValue = OK;
+        // Input matrix 1
+        int row1, col1, size1;
+        Matrix *matrix1 = (Matrix *)malloc(sizeof(Matrix));
+        printf("Enter the row, column and non-zero count of matrix 1: \n");
+        scanf("%d %d %d", &row1, &col1, &size1);
+        if (row1 <= 0 || col1 <= 0 || size1 <= 0 || size1 > row1 * col1) {
+            printf("Invalid input\n");
+            exit(1);
+        }
+        printf("Enter the elements of matrix 1 (i, j, value)(i, j starts from 0): \n");
+        inputMatrix(matrix1, row1, col1, size1);
+        sortMatrix(matrix1);
+        printf("Matrix 1: \n");
+        printMatrix(matrix1);
+        // Input matrix 2
+        int row2, col2, size2;
+        Matrix *matrix2 = (Matrix *)malloc(sizeof(Matrix));
+        printf("Enter the row, column and non-zero count of matrix 2: \n");
+        scanf("%d %d %d", &row2, &col2, &size2);
+        if (row1 <= 0 || col1 <= 0 || size1 <= 0 || size1 > row1 * col1) {
+            printf("Invalid input\n");
+            exit(1);
+        }
+        printf("Enter the elements of matrix 2 (i, j, value)(i, j starts from 0): \n");
+        inputMatrix(matrix2, row2, col2, size2);
+        sortMatrix(matrix2);
+        printf("Matrix 2: \n");
+        printMatrix(matrix2);
+        // Calculate the sum
+        if (row1 != row2) {
+            printf("row1 != row2\n");
+            returnValue = INVALID_INPUT;
+        } else if (col1 != col2) {
+            printf("col1 != col2\n");
+            returnValue = INVALID_INPUT;
+        } else{
+            Matrix *result = (Matrix *)malloc(sizeof(Matrix));
+            for (int i = 0; i < matrix2->size; i++) {
+                matrix2->data[i].data = -matrix2->data[i].data;
+            } // Reverse the sign of matrix2
+            addMatrix(matrix1, matrix2, result);
+            printf("Result: \n");
+            printMatrix(result);
+            returnValue = OK;
+        }
     } else if (choice == 3) {
         // Multiplication
         returnValue = OK;
@@ -86,7 +138,7 @@ int labMatrix() {
     return returnValue;
 }
 
-void initMatrix(Matrix *matrix, int row, int col, int size) {
+void inputMatrix(Matrix *matrix, int row, int col, int size) {
     matrix->row = row;
     matrix->col = col;
     matrix->size = size;
@@ -96,7 +148,15 @@ void initMatrix(Matrix *matrix, int row, int col, int size) {
         exit(1);
     }
     for (int i = 0; i < size; i++) {
-        scanf("%d %d %lf", &matrix->data[i].row, &matrix->data[i].col, &matrix->data[i].data);
+        int iTemp, jTemp, valueTemp;
+        scanf("%d %d %lf", &iTemp, &jTemp, &valueTemp);
+        if (iTemp >= row || jTemp >= col || iTemp < 0 || jTemp < 0) {
+            printf("Invalid input\n");
+            exit(1);
+        }
+        matrix->data[i].row = iTemp;
+        matrix->data[i].col = jTemp;
+        matrix->data[i].data = valueTemp;
     }
 
 }

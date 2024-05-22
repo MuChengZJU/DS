@@ -29,7 +29,7 @@ typedef struct
 
 int labMatrix();
 
-void initMatrix(Matrix *matrix, int row, int col, int size);
+void inputMatrix(Matrix *matrix, int row, int col, int size);
 
 void sortMatrix(Matrix *matrix);
 
