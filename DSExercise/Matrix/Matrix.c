@@ -37,7 +37,7 @@ int labMatrix() {
 
         // Input matrix 1
         int row1, col1, size1;
-        Matrix *matrix1;
+        Matrix *matrix1 = (Matrix *)malloc(sizeof(Matrix));
         printf("Enter the row, column and non-zero count of matrix 1: \n");
         scanf("%d %d %d", &row1, &col1, &size1);
         printf("Enter the elements of matrix 1 (i, j, value): \n");
@@ -47,7 +47,7 @@ int labMatrix() {
         printMatrix(matrix1);
         // Input matrix 2
         int row2, col2, size2;
-        Matrix *matrix2;
+        Matrix *matrix2 = (Matrix *)malloc(sizeof(Matrix));
         printf("Enter the row, column and non-zero count of matrix 2: \n");
         scanf("%d %d %d", &row2, &col2, &size2);
         printf("Enter the elements of matrix 2 (i, j, value): \n");
@@ -63,7 +63,7 @@ int labMatrix() {
             printf("col1 != col2\n");
             returnValue = INVALID_INPUT;
         } else{
-            Matrix *result;
+            Matrix *result = (Matrix *)malloc(sizeof(Matrix));
             addMatrix(matrix1, matrix2, result);
             printf("Result: \n");
             printMatrix(result);
@@ -140,21 +140,12 @@ void addMatrix(Matrix *matrix1, Matrix *matrix2, Matrix *result) {
             result->data[result->size] = matrix2->data[j];
             j++;
         } else {
-            result->data[result->size] = matrix1->data[i];
-            result->data[result->size].data += matrix2->data[j].data;
+            result->data[result->size].row = matrix1->data[i].row;
+            result->data[result->size].col = matrix1->data[i].col;
+            result->data[result->size].data = matrix1->data[i].data + matrix2->data[j].data;
             i++;
             j++;
         }
         result->size++;
-    }
-    while (i < matrix1->size) {
-        result->data[result->size] = matrix1->data[i];
-        result->size++;
-        i++;
-    }
-    while (j < matrix2->size) {
-        result->data[result->size] = matrix2->data[j];
-        result->size++;
-        j++;
     }
 }
