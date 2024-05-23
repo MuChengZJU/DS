@@ -42,7 +42,10 @@ int labMatrix()
         int row1, col1, size1;
         Matrix *matrix1 = (Matrix *)malloc(sizeof(Matrix));
         printf("Enter the row, column and non-zero count of matrix 1: \n");
-        scanf("%d %d %d", &row1, &col1, &size1);
+        if (scanf("%d %d %d", &row1, &col1, &size1) != 3) {
+            printf("Invalid input\n");
+            exit(1);
+        }
         if (row1 <= 0 || col1 <= 0 || size1 <= 0 || size1 > row1 * col1)
         {
             printf("Invalid input\n");
@@ -58,7 +61,10 @@ int labMatrix()
         int row2, col2, size2;
         Matrix *matrix2 = (Matrix *)malloc(sizeof(Matrix));
         printf("Enter the row, column and non-zero count of matrix 2: \n");
-        scanf("%d %d %d", &row2, &col2, &size2);
+        if(scanf("%d %d %d", &row2, &col2, &size2)!=3) {
+            printf("Invalid input\n");
+            exit(1);
+        }
         if (row1 <= 0 || col1 <= 0 || size1 <= 0 || size1 > row1 * col1)
         {
             printf("Invalid input\n");
@@ -98,7 +104,10 @@ int labMatrix()
         int row1, col1, size1;
         Matrix *matrix1 = (Matrix *)malloc(sizeof(Matrix));
         printf("Enter the row, column and non-zero count of matrix 1: \n");
-        scanf("%d %d %d", &row1, &col1, &size1);
+        if (scanf("%d %d %d", &row1, &col1, &size1) != 3) {
+            printf("Invalid input\n");
+            exit(1);
+        }
         if (row1 <= 0 || col1 <= 0 || size1 <= 0 || size1 > row1 * col1)
         {
             printf("Invalid input\n");
@@ -114,7 +123,10 @@ int labMatrix()
         int row2, col2, size2;
         Matrix *matrix2 = (Matrix *)malloc(sizeof(Matrix));
         printf("Enter the row, column and non-zero count of matrix 2: \n");
-        scanf("%d %d %d", &row2, &col2, &size2);
+        if (scanf("%d %d %d", &row2, &col2, &size2) != 3) {
+            printf("Invalid input\n");
+            exit(1);
+        }
         if (row1 <= 0 || col1 <= 0 || size1 <= 0 || size1 > row1 * col1)
         {
             printf("Invalid input\n");
@@ -158,7 +170,10 @@ int labMatrix()
         int row1, col1, size1;
         Matrix *matrix1 = (Matrix *)malloc(sizeof(Matrix));
         printf("Enter the row, column and non-zero count of matrix 1: \n");
-        scanf("%d %d %d", &row1, &col1, &size1);
+        if (scanf("%d %d %d", &row1, &col1, &size1) != 3) {
+            printf("Invalid input\n");
+            exit(1);
+        }
         if (row1 <= 0 || col1 <= 0 || size1 <= 0 || size1 > row1 * col1)
         {
             printf("Invalid input\n");
@@ -174,7 +189,10 @@ int labMatrix()
         int row2, col2, size2;
         Matrix *matrix2 = (Matrix *)malloc(sizeof(Matrix));
         printf("Enter the row, column and non-zero count of matrix 2: \n");
-        scanf("%d %d %d", &row2, &col2, &size2);
+        if (scanf("%d %d %d", &row2, &col2, &size2) != 3) {
+            printf("Invalid input\n");
+            exit(1);
+        }
         if (row1 <= 0 || col1 <= 0 || size1 <= 0 || size1 > row1 * col1)
         {
             printf("Invalid input\n");
@@ -215,7 +233,10 @@ int labMatrix()
         int row, col, size;
         Matrix *matrix = (Matrix *)malloc(sizeof(Matrix));
         printf("Enter the row, column and non-zero count of matrix: \n");
-        scanf("%d %d %d", &row, &col, &size);
+        if (scanf("%d %d %d", &row, &col, &size) != 3) {
+            printf("Invalid input\n");
+            exit(1);
+        }
         if (row <= 0 || col <= 0 || size < 0 || size > row * col)
         {
             printf("Invalid input\n");
@@ -259,7 +280,10 @@ void inputMatrix(Matrix *matrix, int row, int col, int size)
     {
         int iTemp, jTemp;
         double valueTemp;
-        scanf("%d %d %lf", &iTemp, &jTemp, &valueTemp);
+        if (scanf("%d %d %lf", &iTemp, &jTemp, &valueTemp) != 3) {
+            printf("Invalid input\n");
+            exit(1);
+        }
         if (iTemp >= row || jTemp >= col || iTemp < 0 || jTemp < 0)
         {
             printf("Invalid input\n");
