@@ -290,9 +290,30 @@ void sortMatrix(Matrix *matrix)
 
 void printMatrix(Matrix *matrix)
 {
-    for (int i = 0; i < matrix->size; i++)
+    // for (int i = 0; i < matrix->size; i++)
+    // {
+    //     printf("%d, %d, %lf\n", matrix->data[i].row, matrix->data[i].col, matrix->data[i].data);
+    // }
+    for (int i = 0; i < matrix->row; i++)
     {
-        printf("%d, %d, %lf\n", matrix->data[i].row, matrix->data[i].col, matrix->data[i].data);
+        for (int j = 0; j < matrix->col; j++)
+        {
+            int flag = 0;
+            for (int k = 0; k < matrix->size; k++)
+            {
+                if (matrix->data[k].row == i && matrix->data[k].col == j)
+                {
+                    printf("%.2lf\t", matrix->data[k].data);
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0)
+            {
+                printf("0\t");
+            }
+        }
+        printf("\n");
     }
 }
 
@@ -330,6 +351,18 @@ void addMatrix(Matrix *matrix1, Matrix *matrix2, Matrix *result)
             i++;
             j++;
         }
+        result->size++;
+    }
+    while (i < matrix1->size)
+    {
+        result->data[result->size] = matrix1->data[i];
+        i++;
+        result->size++;
+    }
+    while (j < matrix2->size)
+    {
+        result->data[result->size] = matrix2->data[j];
+        j++;
         result->size++;
     }
 }
