@@ -65,20 +65,20 @@ void inorderTraversal(Node* root) {
 }
 
 int main() {
-    printf("输入二叉树：\n");
+    printf("杈撳叆浜屽弶鏍戯細\n");
     Node* root = buildTree();
     
-    printf("输入删除数字: ");
+    printf("杈撳叆鍒犻櫎鏁板瓧: ");
     int targetValue;
     scanf("%d", &targetValue);
     
-    printf("原二叉树(中序遍历): \n");
+    printf("鍘熶簩鍙夋爲(涓簭閬嶅巻): \n");
     inorderTraversal(root);
     printf("\n");
     
     root = removeNodes(root, targetValue);
     
-    printf("删除后树: \n");
+    printf("鍒犻櫎鍚庢爲: \n");
     inorderTraversal(root);
     printf("\n");
     
