@@ -48,13 +48,12 @@ Node* buildTree() {
 }
 
 int main() {
-    printf("请输入树的节点序列：\n");
-    Node *root = buildTree();
-    printf("树的所有边：\n");
-    printEdges(root);
-
-    // Free the allocated memory - a function to free the tree nodes would be ideal
-    // but is omitted here for simplicity.
+    while (1) {
+        printf("请输入树的节点序列：\n");
+        Node *root = buildTree();
+        printf("树的所有边：\n");
+        printEdges(root);
+    }
 
     return 0;
 }
