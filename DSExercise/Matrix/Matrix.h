@@ -17,6 +17,28 @@ typedef struct {
     int row;    // Row number
     int col;    // Column number
     double data;  // Data
-} MatrixElement; 
+}Element; 
+
+typedef struct
+{
+    int row; // Row number
+    int col; // Column number
+    int size; //Number of non-zero elements
+    Element *data;
+}Matrix;
+
+int labMatrix();
+
+void inputMatrix(Matrix *matrix, int row, int col, int size);
+
+void sortMatrix(Matrix *matrix);
+
+void printMatrix(Matrix *matrix);
+
+void addMatrix(Matrix *matrix1, Matrix *matrix2, Matrix *result);
+
+void multiplyMatrix(Matrix *matrix1, Matrix *matrix2, Matrix *result);
+
+void transposeMatrix(Matrix *matrix, Matrix *result);
 
 #endif // MATRIX_H
