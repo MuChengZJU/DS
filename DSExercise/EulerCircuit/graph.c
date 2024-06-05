@@ -105,15 +105,24 @@ int lab7() {
     int numVertices, numEdges, src, dest;
 
     printf("Enter the number of vertices: ");
-    scanf("%d", &numVertices);
+    while (scanf("%d", &numVertices) != 1 || numVertices <= 0 || numVertices > MAX_VERTICES) {
+        printf("Invalid input. Enter a positive integer less than or equal to %d: ", MAX_VERTICES);
+        while (getchar() != '\n'); // 清除输入缓冲区
+    }
     initGraph(&g, numVertices);
 
     printf("Enter the number of edges: ");
-    scanf("%d", &numEdges);
+    while (scanf("%d", &numEdges) != 1 || numEdges < 0) {
+        printf("Invalid input. Enter a non-negative integer: ");
+        while (getchar() != '\n'); // 清除输入缓冲区
+    }
 
     for (int i = 0; i < numEdges; i++) {
         printf("Enter edge (source destination): ");
-        scanf("%d %d", &src, &dest);
+        while (scanf("%d %d", &src, &dest) != 2 || src < 0 || src >= numVertices || dest < 0 || dest >= numVertices) {
+            printf("Invalid input. Enter two integers between 0 and %d: ", numVertices - 1);
+            while (getchar() != '\n'); // 清除输入缓冲区
+        }
         addEdge(&g, src, dest);
     }
 
