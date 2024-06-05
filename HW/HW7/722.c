@@ -2,24 +2,24 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-// ¶¨ÒåÁÚ½Ó±í½Úµã
+// å®šä¹‰é‚»æ¥è¡¨èŠ‚ç‚¹
 typedef struct AdjListNode {
     int dest;
     struct AdjListNode* next;
 } AdjListNode;
 
-// ¶¨ÒåÁÚ½Ó±í
+// å®šä¹‰é‚»æ¥è¡¨
 typedef struct AdjList {
     AdjListNode* head;
 } AdjList;
 
-// ¶¨ÒåÍ¼
+// å®šä¹‰å›¾
 typedef struct Graph {
     int V;
     AdjList* array;
 } Graph;
 
-// ´´½¨ÁÚ½Ó±í½Úµã
+// åˆ›å»ºé‚»æ¥è¡¨èŠ‚ç‚¹
 AdjListNode* newAdjListNode(int dest) {
     AdjListNode* newNode = (AdjListNode*)malloc(sizeof(AdjListNode));
     newNode->dest = dest;
@@ -27,7 +27,7 @@ AdjListNode* newAdjListNode(int dest) {
     return newNode;
 }
 
-// ´´½¨Í¼
+// åˆ›å»ºå›¾
 Graph* createGraph(int V) {
     Graph* graph = (Graph*)malloc(sizeof(Graph));
     graph->V = V;
@@ -38,23 +38,23 @@ Graph* createGraph(int V) {
     return graph;
 }
 
-// Ìí¼Ó±ßµ½Í¼
+// æ·»åŠ è¾¹åˆ°å›¾
 void addEdge(Graph* graph, int src, int dest) {
     AdjListNode* newNode = newAdjListNode(dest);
     newNode->next = graph->array[src].head;
     graph->array[src].head = newNode;
 }
 
-// Éî¶ÈÓÅÏÈËÑË÷¸¨Öúº¯Êı
+// æ·±åº¦ä¼˜å…ˆæœç´¢è¾…åŠ©å‡½æ•°
 bool DFSUtil(Graph* graph, int v, int j, bool* visited) {
     visited[v] = true;
 
-    // Èç¹ûÕÒµ½Ä¿±ê¶¥µã£¬·µ»Øtrue
+    // å¦‚æœæ‰¾åˆ°ç›®æ ‡é¡¶ç‚¹ï¼Œè¿”å›true
     if (v == j) {
         return true;
     }
 
-    // ±éÀúÁÚ½Ó±í
+    // éå†é‚»æ¥è¡¨
     AdjListNode* crawl = graph->array[v].head;
     while (crawl != NULL) {
         int adjVertex = crawl->dest;
@@ -68,30 +68,30 @@ bool DFSUtil(Graph* graph, int v, int j, bool* visited) {
     return false;
 }
 
-// ÅĞ±ğÊÇ·ñ´æÔÚ´Ó¶¥µãvµ½¶¥µãjµÄÂ·¾¶
+// åˆ¤åˆ«æ˜¯å¦å­˜åœ¨ä»é¡¶ç‚¹våˆ°é¡¶ç‚¹jçš„è·¯å¾„
 bool isPathExist(Graph* graph, int v, int j) {
     if (v == j) {
-        return false; // ²»¿¼ÂÇ×Ô»·
+        return false; // ä¸è€ƒè™‘è‡ªç¯
     }
 
-    // ´´½¨·ÃÎÊÊı×é
+    // åˆ›å»ºè®¿é—®æ•°ç»„
     bool* visited = (bool*)malloc(graph->V * sizeof(bool));
     for (int i = 0; i < graph->V; i++) {
         visited[i] = false;
     }
 
-    // µ÷ÓÃDFS¸¨Öúº¯Êı
+    // è°ƒç”¨DFSè¾…åŠ©å‡½æ•°
     bool result = DFSUtil(graph, v, j, visited);
 
-    // ÊÍ·Å·ÃÎÊÊı×é
+    // é‡Šæ”¾è®¿é—®æ•°ç»„
     free(visited);
 
     return result;
 }
 
-// Ö÷º¯Êı²âÊÔ
+// ä¸»å‡½æ•°æµ‹è¯•
 int main() {
-    // ´´½¨Ò»¸öÍ¼
+    // åˆ›å»ºä¸€ä¸ªå›¾
     int V = 4;
     Graph* graph = createGraph(V);
     addEdge(graph, 0, 1);
@@ -103,9 +103,9 @@ int main() {
 
     int v = 1, j = 3;
     if (isPathExist(graph, v, j)) {
-        printf("´Ó¶¥µã%dµ½¶¥µã%d´æÔÚÂ·¾¶\n", v, j);
+        printf("ä»é¡¶ç‚¹%dåˆ°é¡¶ç‚¹%då­˜åœ¨è·¯å¾„\n", v, j);
     } else {
-        printf("´Ó¶¥µã%dµ½¶¥µã%d²»´æÔÚÂ·¾¶\n", v, j);
+        printf("ä»é¡¶ç‚¹%dåˆ°é¡¶ç‚¹%dä¸å­˜åœ¨è·¯å¾„\n", v, j);
     }
 
     return 0;
