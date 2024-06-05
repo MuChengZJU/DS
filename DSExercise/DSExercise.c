@@ -4,6 +4,7 @@
 #include "Expression/Expression.h"
 #include "DynamicString/DynamicString.h"
 #include "Matrix/Matrix.h"
+#include "EulerCircuit/graph.h"
 
 #define MAX_BUFF_SIZE (256)
 
@@ -54,6 +55,11 @@ int main(int argc, char* argv[])
         case '7':
             labMatrix();
             break;
+
+        case '8':
+            lab7();
+            break;
+        
         
         default:
             printf("\n请输入有效的序号！\n\n");
@@ -76,6 +82,7 @@ void PrintMenu()
     printf("--5. 栈表达式求值\n");
     printf("--6. 动态字符串\n");
     printf("--7. 稀疏矩阵运算\n");
+    printf("--8. 欧拉回路的判定和求解\n");
     printf("--0. 退出\n\n");
 	printf("=============================================\n\n");
     printf("请输入序号选择你想执行的编程练习: ");

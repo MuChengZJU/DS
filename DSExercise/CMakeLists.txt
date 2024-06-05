@@ -22,6 +22,8 @@ add_executable(DSExercise
     DynamicString/DynamicString.h
     Matrix/Matrix.c
     Matrix/Matrix.h
+    EulerCircuit/graph.c
+    EulerCircuit/graph.h
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

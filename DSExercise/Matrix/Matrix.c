@@ -37,11 +37,14 @@ int labMatrix() {
         break;
     case 1:
         // Addition
-        int row1, col1;
+        {
+        int row1, col1;     
         printf("Enter the row and column number of matrix 1: \n");
         scanf("%d %d", &row1, &col1);
         
         returnValue = OK;
+        }
+        
         break;
     case 2:
         // Subtraction
