@@ -1,3 +1,12 @@
+/**
+ * @file graph.c
+ * @author MuChengZJU (MuChengZJU@qq.com)
+ * @brief 
+ * @version 0.1
+ * @date 2024-06-06
+ * 
+ * 
+ */
 #include "graph.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -107,21 +116,21 @@ int lab7() {
     printf("Enter the number of vertices: ");
     while (scanf("%d", &numVertices) != 1 || numVertices <= 0 || numVertices > MAX_VERTICES) {
         printf("Invalid input. Enter a positive integer less than or equal to %d: ", MAX_VERTICES);
-        while (getchar() != '\n'); // 清除输入缓冲区
+        while (getchar() != '\n');
     }
     initGraph(&g, numVertices);
 
     printf("Enter the number of edges: ");
     while (scanf("%d", &numEdges) != 1 || numEdges < 0) {
         printf("Invalid input. Enter a non-negative integer: ");
-        while (getchar() != '\n'); // 清除输入缓冲区
+        while (getchar() != '\n');
     }
 
     for (int i = 0; i < numEdges; i++) {
         printf("Enter edge (source destination): ");
         while (scanf("%d %d", &src, &dest) != 2 || src < 0 || src >= numVertices || dest < 0 || dest >= numVertices) {
             printf("Invalid input. Enter two integers between 0 and %d: ", numVertices - 1);
-            while (getchar() != '\n'); // 清除输入缓冲区
+            while (getchar() != '\n');
         }
         addEdge(&g, src, dest);
     }
